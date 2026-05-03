@@ -1,0 +1,53 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+.marquee {
+    width: 110%;
+    display: flex;
+    overflow-x: auto;
+    position: absolute;
+    bottom: 0;
+    transform: rotate(-3deg);
+    transform-origin: bottom left;
+    background: $marquee;
+    backdrop-filter: blur(2.5px);
+    padding-block: 0.75rem;
+    scrollbar-width: none;
+}
+
+.marquee::-webkit-scrollbar {
+    display: none;
+}
+
+.group {
+    @include dFlex($g: 3.5rem);
+    padding-right: 3.5rem;
+    animation: spin 20s infinite linear;
+
+    >span {
+        color: $teal-dark;
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-normal;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-content: center;
+        white-space: nowrap;
+    }
+
+    >.dot {
+        width: 8px;
+        height: 8px;
+        background-color: $teal-dark;
+        border-radius: 50%;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

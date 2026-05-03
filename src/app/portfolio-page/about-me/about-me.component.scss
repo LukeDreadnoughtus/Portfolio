@@ -1,0 +1,136 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+section {
+    background-color: $black;
+}
+
+.container {
+    @include container();
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+    padding-top: 15.125rem;
+    padding-bottom: 10.375rem;
+}
+
+.image-container {
+    transform: translateY(-98px);
+}
+
+.profile-img {
+    border-radius: 30px;
+    filter: grayscale(0.9);
+}
+
+.grid-img-container {
+    position: relative;
+}
+
+.grid-bg {
+    position: absolute;
+    left: -30px;
+    top: 30px;
+    z-index: -1;
+}
+
+.not-hovered {
+    opacity: 0;
+}
+
+.got-hovered {
+    animation: blend-in;
+    animation-duration: 1s;
+}
+
+@keyframes blend-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+h4 {
+    font-weight: $font-weight-light-bold;
+    font-size: $font-size-xl;
+    color: $teal-dark;
+    margin-bottom: 1.25rem;
+}
+
+h3 {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-5xl;
+    color: $teal-dark;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-l;
+    text-align: start;
+}
+
+.header-paragraph {
+    margin-bottom: 2rem;
+    color: $white;
+}
+
+.paragraph-container {
+    @include dFlex($jc: flex-start, $g: 1.5rem);
+
+    >img {
+        height: 32px;
+        width: 32px;
+    }
+
+    transform: translateX(-15px);
+
+    >p {
+        color: darken($white, 20);
+        transition: color 150ms ease-out;
+    }
+
+    &:hover p {
+        color: $white;
+    }
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+
+    .image-container {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+    .grid-container {
+        display: block;
+        padding-block: 6.25rem;
+    }
+
+    .image-container {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .grid-bg {
+        left: -12px;
+        top: 20px;
+    }
+}

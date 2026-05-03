@@ -1,0 +1,52 @@
+@import '../../../../variables.scss';
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog {
+    padding: 0;
+    outline: none;
+    border: 1px solid $teal-dark;
+    border-radius: 5px;
+    background-image: url(../../../../assets/img/hero-section/hero-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    padding: 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    >button {
+        background: transparent;
+        transition: transform 300ms ease-out;
+
+        &:hover {
+            transform: scale(1.2);
+
+            >svg {
+                .close-btn {
+                    fill: $teal-dark;
+                }
+            }
+        }
+    }
+}
+
+.close-btn {
+    fill: $white;
+    transition: fill 300ms ease-out;
+}
+
+p {
+    margin-top: 2rem;
+    color: $white;
+    font-size: $font-size-xl;
+}

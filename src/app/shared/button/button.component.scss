@@ -1,0 +1,30 @@
+@import '../../../variables.scss';
+
+:host {
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 100px;
+    padding: 0.813rem 1.5rem;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-l;
+    transition: border-color 300ms ease-out, color 300ms ease-out;
+    background-color: transparent;
+
+    &:hover {
+        border-color: $teal-dark;
+        color: $teal-dark;
+    }
+}
+
+@media (max-width: 576px) {
+    :host {
+        padding: 0.625rem 0.625rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :host {
+        border-color: $teal-dark;
+        color: $teal-dark;
+    }
+}

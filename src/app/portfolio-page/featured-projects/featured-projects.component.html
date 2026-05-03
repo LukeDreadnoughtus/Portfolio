@@ -1,0 +1,82 @@
+<section>
+    @if (showDialog()) {
+    <app-dialog />
+    }
+    <div class="container">
+        <h4 id="projects" class="karla">Portfolio</h4>
+        <h3 i18n class="fira">Featured Projects</h3>
+        <p i18n class="karla explore-paragraph">Explore a selection of my work here - Interact with<br>projects to see my
+            skills in action.</p>
+        <div class="featured-projects">
+            <div class="project-names">
+                @if (currentWindowWidth() >= 992) {
+                <div (click)="openDialog(0)" class="border-block project" (mouseenter)="toggleImage('one')"
+                    (mouseleave)="toggleImage('one')">
+                    <div>
+                        <span class="fira project-name">Join</span>
+                    </div>
+                    <div class="karla technologies">
+                        <span>HTML</span>
+                        <div></div>
+                        <span>CSS</span>
+                        <div></div>
+                        <span>JavaScript</span>
+                        <div></div>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+                <div (click)="openDialog(1)" class="border-bottom project" (mouseenter)="toggleImage('two')"
+                    (mouseleave)="toggleImage('two')">
+                    <div>
+                        <span class="fira project-name">Sharki</span>
+                    </div>
+                    <div class="karla technologies">
+                        <span>HTML</span>
+                        <div></div>
+                        <span>CSS</span>
+                        <div></div>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                } @else {
+                <div (click)="openDialog(0)" class="border-block project">
+                    <div>
+                        <span class="fira project-name">Join</span>
+                    </div>
+                    <div class="karla technologies">
+                        <span>HTML</span>
+                        <div></div>
+                        <span>CSS</span>
+                        <div></div>
+                        <span>JavaScript</span>
+                        <div></div>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+                <div (click)="openDialog(1)" class="border-bottom project">
+                    <div>
+                        <span class="fira project-name">Sharki</span>
+                    </div>
+                    <div class="karla technologies">
+                        <span>HTML</span>
+                        <div></div>
+                        <span>CSS</span>
+                        <div></div>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                }
+            </div>
+            <div id="project-one" [ngClass]="{ 'd_none' : !projectOneIsHovered() }">
+                <img class="fp-1" src="assets/img/featured-projects/join.png"
+                    i18n-alt alt="My Join kanban board for tracking tasks">
+                <img class="capa" src="assets/img/featured-projects/Capa_1.svg">
+            </div>
+            <div id="project-two" [ngClass]="{ 'd_none' : !projectTwoIsHovered() }">
+                <img class="fp-2" src="assets/img/featured-projects/sharki.png"
+                    i18n-alt alt="A screenshot of Pepe, the character of sharki">
+                <img class="capa" src="assets/img/featured-projects/Capa_1.svg">
+            </div>
+        </div>
+    </div>
+</section>

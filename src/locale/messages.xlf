@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8098718568051216945" datatype="html">
+        <source>Lukas Heller | Portfolio</source>
+      </trans-unit>
+      <trans-unit id="4264201572538520263" datatype="html">
+        <source>Lukas Heller | Legal Notice</source>
+      </trans-unit>
+      <trans-unit id="3157024563016436860" datatype="html">
+        <source>Lukas Heller | Privacy Policy</source>
+      </trans-unit>
+      <trans-unit id="938533143830765572" datatype="html">
+        <source>Return to landing page</source>
+      </trans-unit>
+      <trans-unit id="1368884853095124539" datatype="html">
+        <source>Legal Notice</source>
+      </trans-unit>
+      <trans-unit id="5891707175321515013" datatype="html">
+        <source>Imprint</source>
+      </trans-unit>
+      <trans-unit id="4185803102519780479" datatype="html">
+        <source>Exploring the board</source>
+      </trans-unit>
+      <trans-unit id="4916906451137847729" datatype="html">
+        <source>Acceptance of terms</source>
+      </trans-unit>
+      <trans-unit id="7501655788185803507" datatype="html">
+        <source>By accessing and using <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.</source>
+      </trans-unit>
+      <trans-unit id="8330630566060394630" datatype="html">
+        <source>Scope and ownership of the product</source>
+      </trans-unit>
+      <trans-unit id="1933451194362196696" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> has been developed as part of a student group project in a web development bootcamp at the <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Developer Akademie GmbH<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>. It has an educational purpose and is not intended for extensive personal &amp; business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product. </source>
+      </trans-unit>
+      <trans-unit id="8815091597983117163" datatype="html">
+        <source>The design of <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> is owned by the <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Developer Akademie GmbH<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.</source>
+      </trans-unit>
+      <trans-unit id="6458515158610880899" datatype="html">
+        <source>Proprietary rights</source>
+      </trans-unit>
+      <trans-unit id="3390637331651232871" datatype="html">
+        <source>Aside from the design owned by <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Developer Akademie GmbH<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>, we, the listed students, retain all proprietary rights in <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>, including any associated copyrighted material, trademarks, and other proprietary information.</source>
+      </trans-unit>
+      <trans-unit id="3663536414765399634" datatype="html">
+        <source>Use of the product</source>
+      </trans-unit>
+      <trans-unit id="4788943979864576636" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>. </source>
+      </trans-unit>
+      <trans-unit id="1897487720508688864" datatype="html">
+        <source>Disclaimer of warranties and limitation of liability</source>
+      </trans-unit>
+      <trans-unit id="517501502249416555" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> is provided &quot;as is&quot; without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Developer Akademie<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>. </source>
+      </trans-unit>
+      <trans-unit id="4704511327394108874" datatype="html">
+        <source>Indemnity</source>
+      </trans-unit>
+      <trans-unit id="7328468405372095580" datatype="html">
+        <source>You agree to indemnify, defend and hold harmless us, the listed students, the <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Developer Akademie<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Portfolio<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> and/or your breach of this Legal Notice. </source>
+      </trans-unit>
+      <trans-unit id="2883870399774431731" datatype="html">
+        <source>For any questions or notices, please contact me at luke.heller@dreadnoughtus.de</source>
+      </trans-unit>
+      <trans-unit id="5037727568421445871" datatype="html">
+        <source>An image of myself</source>
+      </trans-unit>
+      <trans-unit id="805930427815599295" datatype="html">
+        <source>Who I Am</source>
+      </trans-unit>
+      <trans-unit id="6018686961415145811" datatype="html">
+        <source>About Me</source>
+      </trans-unit>
+      <trans-unit id="6145328938763517730" datatype="html">
+        <source>Hey there, I&apos;m Lukas! Since my childhood, I’ve been fascinated by computers and video games – today, I bring my own applications and solutions to life through code.</source>
+      </trans-unit>
+      <trans-unit id="6913024093253731161" datatype="html">
+        <source>An icon to represent the location</source>
+      </trans-unit>
+      <trans-unit id="4379140619322965086" datatype="html">
+        <source>Currently living in Magdeburg, Germany. I&apos;m open to work remotely and at the companys office. </source>
+      </trans-unit>
+      <trans-unit id="9192219630015448718" datatype="html">
+        <source>An icon with a thinking head</source>
+      </trans-unit>
+      <trans-unit id="8320216635030587555" datatype="html">
+        <source>I’m eager to kick off my career as a Fullstack Web Developer.</source>
+      </trans-unit>
+      <trans-unit id="3931002722069920980" datatype="html">
+        <source>A checkmark icon</source>
+      </trans-unit>
+      <trans-unit id="2307200122739018553" datatype="html">
+        <source>As a creative and analytical team player, I like to get challenged with complex problems to learn from them and to further expand my expertise as a Software developer.</source>
+      </trans-unit>
+      <trans-unit id="3570474553590540676" datatype="html">
+        <source>What my colleagues say about me</source>
+      </trans-unit>
+      <trans-unit id="2603617104881771138" datatype="html">
+        <source>After unexpectedly losing my developer, I faced a critical challenge. When asked if he felt up to it, Luke simply said, “Let’s try.” After just three months of onboarding, he independently managed clients with over 1,800 employees—impressively confident and professional.</source>
+      </trans-unit>
+      <trans-unit id="6530941943841684664" datatype="html">
+        <source>I met Luke at his previous company and was so impressed by his work that I actively sought to bring him into our organization.</source>
+      </trans-unit>
+      <trans-unit id="4666263398119943433" datatype="html">
+        <source>Mr. Heller has recently joined our company and is already impressing with strong commitment and innovative solutions. His ability to bring in fresh perspectives and tackle challenges effectively is particularly noteworthy. For further suggestions and technical inquiries, I recommend contacting him directly.</source>
+      </trans-unit>
+      <trans-unit id="5016919320572357573" datatype="html">
+        <source>Finally, a true IT professional—even if he’s the only one who occasionally looks the part.</source>
+      </trans-unit>
+      <trans-unit id="333499707559730721" datatype="html">
+        <source>How do you manage to start even Mondays with so much energy</source>
+      </trans-unit>
+      <trans-unit id="9112159250406763375" datatype="html">
+        <source>Thanks! Your email is on its way. We’ll be in touch soon.</source>
+      </trans-unit>
+      <trans-unit id="1153721192129533394" datatype="html">
+        <source>Contact me</source>
+      </trans-unit>
+      <trans-unit id="2414646104065203299" datatype="html">
+        <source>Let&apos;s work together</source>
+      </trans-unit>
+      <trans-unit id="7822866996489761530" datatype="html">
+        <source>Got a problem to solve?</source>
+      </trans-unit>
+      <trans-unit id="8435898354311918127" datatype="html">
+        <source>Tell me about the challenge you’re facing and let’s explore how I can make your project a success.</source>
+      </trans-unit>
+      <trans-unit id="5287790813566950567" datatype="html">
+        <source>Need a Frontend developer? <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Let&apos;s talk!<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+      </trans-unit>
+      <trans-unit id="6470911101692007913" datatype="html">
+        <source>What&apos;s your name?</source>
+      </trans-unit>
+      <trans-unit id="7060576432395966635" datatype="html">
+        <source>Your name goes here</source>
+      </trans-unit>
+      <trans-unit id="5703462943847701340" datatype="html">
+        <source>What&apos;s your email?</source>
+      </trans-unit>
+      <trans-unit id="6068769079429266146" datatype="html">
+        <source>youremail@email.com</source>
+      </trans-unit>
+      <trans-unit id="1080625167689547614" datatype="html">
+        <source>How can I help you?</source>
+      </trans-unit>
+      <trans-unit id="999780757476925501" datatype="html">
+        <source>Hello Lukas, I am interested in...</source>
+      </trans-unit>
+      <trans-unit id="5474173402870270688" datatype="html">
+        <source>What do you need to develop?</source>
+      </trans-unit>
+      <trans-unit id="3235936312610345505" datatype="html">
+        <source> I&apos;ve read the <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;fira privacy-highlight&quot;&gt;"/>privacy policy<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> and agree to the processing of my data as outlined. </source>
+      </trans-unit>
+      <trans-unit id="3633376207233325357" datatype="html">
+        <source>Please accept the privacy policy.</source>
+      </trans-unit>
+      <trans-unit id="3812767882168593296" datatype="html">
+        <source>Say Hello ;)</source>
+      </trans-unit>
+      <trans-unit id="2194410702774887960" datatype="html">
+        <source>What is this project about?</source>
+      </trans-unit>
+      <trans-unit id="7048193048887855990" datatype="html">
+        <source>No skills have been used.</source>
+      </trans-unit>
+      <trans-unit id="3119797645194699699" datatype="html">
+        <source>Github</source>
+      </trans-unit>
+      <trans-unit id="8032120176437848425" datatype="html">
+        <source>Arrow SVG</source>
+      </trans-unit>
+      <trans-unit id="3997762502877865310" datatype="html">
+        <source>Live Test</source>
+      </trans-unit>
+      <trans-unit id="5885358523128793802" datatype="html">
+        <source>Next project</source>
+      </trans-unit>
+      <trans-unit id="718819065092803560" datatype="html">
+        <source>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.</source>
+      </trans-unit>
+      <trans-unit id="9036676009583343111" datatype="html">
+        <source>Jump, swim and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.</source>
+      </trans-unit>
+      <trans-unit id="7949354029476198233" datatype="html">
+        <source>Featured Projects</source>
+      </trans-unit>
+      <trans-unit id="4767651382957682579" datatype="html">
+        <source>Explore a selection of my work here - Interact with<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>projects to see my skills in action.</source>
+      </trans-unit>
+      <trans-unit id="9213063027193991880" datatype="html">
+        <source>My Join kanban board for tracking tasks</source>
+      </trans-unit>
+      <trans-unit id="1007625284753612149" datatype="html">
+        <source>Frontend Developer</source>
+      </trans-unit>
+      <trans-unit id="658938984899746124" datatype="html">
+        <source> Check my work </source>
+      </trans-unit>
+      <trans-unit id="3260075693421550153" datatype="html">
+        <source> Contact me </source>
+      </trans-unit>
+      <trans-unit id="1113808887379847699" datatype="html">
+        <source>E-Mail icon in white</source>
+      </trans-unit>
+      <trans-unit id="3032079649070801659" datatype="html">
+        <source>Github icon in white</source>
+      </trans-unit>
+      <trans-unit id="5343578588831777002" datatype="html">
+        <source>Linkedin icon in white</source>
+      </trans-unit>
+      <trans-unit id="5601739562537722883" datatype="html">
+        <source>Available for remote work</source>
+      </trans-unit>
+      <trans-unit id="1470882276885303343" datatype="html">
+        <source>Based in Magdeburg</source>
+      </trans-unit>
+      <trans-unit id="8971755396644736436" datatype="html">
+        <source>Open to work</source>
+      </trans-unit>
+      <trans-unit id="152625797886681940" datatype="html">
+        <source>Technologies</source>
+      </trans-unit>
+      <trans-unit id="6715616744532594180" datatype="html">
+        <source>Skill Set</source>
+      </trans-unit>
+      <trans-unit id="6486499449739671649" datatype="html">
+        <source>I create modern, user-friendly web apps with HTML, CSS, and JavaScript, strengthened by TypeScript and Angular. Using Material Design, Git, Firebase, and REST APIs, I build clean, scalable solutions. With a strong growth mindset, I keep learning and adapt quickly to new technologies.</source>
+      </trans-unit>
+      <trans-unit id="5136656872382480212" datatype="html">
+        <source>You need <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;fira&quot;&gt;"/>another skill?<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+      </trans-unit>
+      <trans-unit id="4331213605291039053" datatype="html">
+        <source>Feel free to contact me. I look forward to expanding on my previous knowledge.</source>
+      </trans-unit>
+      <trans-unit id="120132752083279691" datatype="html">
+        <source> Let&apos;s Talk </source>
+      </trans-unit>
+      <trans-unit id="3003627325494215482" datatype="html">
+        <source>Next technologies I aim to learn</source>
+      </trans-unit>
+      <trans-unit id="8439955599488894226" datatype="html">
+        <source>Privacy Policy</source>
+      </trans-unit>
+      <trans-unit id="2784900125513291363" datatype="html">
+        <source>Responsible entity</source>
+      </trans-unit>
+      <trans-unit id="123842545276072825" datatype="html">
+        <source>General information</source>
+      </trans-unit>
+      <trans-unit id="7237789234817701096" datatype="html">
+        <source>Protecting your personal data is very important to me. I treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy. This privacy policy informs you about what data I collect, how I use it, and what rights you have regarding your data.</source>
+      </trans-unit>
+      <trans-unit id="7588756169888268823" datatype="html">
+        <source>Hosting</source>
+      </trans-unit>
+      <trans-unit id="3433382600471197842" datatype="html">
+        <source>This website is hosted via Firebase Hosting. The hosting provider automatically processes your IP address and other technical data when you access the site to ensure its operation. This information is stored in so-called server log files and includes:</source>
+      </trans-unit>
+      <trans-unit id="1140232533672197548" datatype="html">
+        <source>IP address of the requesting device</source>
+      </trans-unit>
+      <trans-unit id="3841671300895453388" datatype="html">
+        <source>Date and time of access</source>
+      </trans-unit>
+      <trans-unit id="5536331374960045613" datatype="html">
+        <source>Browser type and version</source>
+      </trans-unit>
+      <trans-unit id="6835495175170725471" datatype="html">
+        <source>Operating system used</source>
+      </trans-unit>
+      <trans-unit id="2278689684150704767" datatype="html">
+        <source>Referrer URL</source>
+      </trans-unit>
+      <trans-unit id="130931832324979004" datatype="html">
+        <source>This data is used solely for technical administration and is not merged with other data sources.</source>
+      </trans-unit>
+      <trans-unit id="3388566360514874541" datatype="html">
+        <source>Collection and processing of personal data</source>
+      </trans-unit>
+      <trans-unit id="5215455085913564286" datatype="html">
+        <source>My website includes a contact form. I collect the following personal data through this form:</source>
+      </trans-unit>
+      <trans-unit id="7827488502173159495" datatype="html">
+        <source>First and last name</source>
+      </trans-unit>
+      <trans-unit id="3967269098753656610" datatype="html">
+        <source>Email address</source>
+      </trans-unit>
+      <trans-unit id="5022943785253412811" datatype="html">
+        <source>This data is used solely to contact you or to provide the website’s features.</source>
+      </trans-unit>
+      <trans-unit id="6776960195885151625" datatype="html">
+        <source>Storage and Security:</source>
+      </trans-unit>
+      <trans-unit id="6205384593968733675" datatype="html">
+        <source>Data transmission is encrypted (e.g., via HTTPS, if enabled).</source>
+      </trans-unit>
+      <trans-unit id="6085213163197914869" datatype="html">
+        <source>Data Disclosure</source>
+      </trans-unit>
+      <trans-unit id="608608673922536945" datatype="html">
+        <source>Your personal data is not shared with third parties. No data is transferred outside the European Union.</source>
+      </trans-unit>
+      <trans-unit id="1903492749275192832" datatype="html">
+        <source>Use of Cookies</source>
+      </trans-unit>
+      <trans-unit id="8335213819693344480" datatype="html">
+        <source>This website does not use cookies.</source>
+      </trans-unit>
+      <trans-unit id="4131071089538211661" datatype="html">
+        <source>Analytics and Tracking Tools</source>
+      </trans-unit>
+      <trans-unit id="593453556526142506" datatype="html">
+        <source>No tracking or analytics tools (e.g., Google Analytics, Matomo) are used on this website.</source>
+      </trans-unit>
+      <trans-unit id="4291952317863929190" datatype="html">
+        <source>Your Rights</source>
+      </trans-unit>
+      <trans-unit id="983916734855461517" datatype="html">
+        <source>You have the right to:</source>
+      </trans-unit>
+      <trans-unit id="1993643831415148330" datatype="html">
+        <source>Access the personal data we store (Art. 15 GDPR)</source>
+      </trans-unit>
+      <trans-unit id="3257563097958649802" datatype="html">
+        <source>Rectify inaccurate data (Art. 16 GDPR)</source>
+      </trans-unit>
+      <trans-unit id="7460669718685989608" datatype="html">
+        <source>Request deletion of your data (Art. 17 GDPR)</source>
+      </trans-unit>
+      <trans-unit id="4593877511162381993" datatype="html">
+        <source>Restrict processing of your data (Art. 18 GDPR)</source>
+      </trans-unit>
+      <trans-unit id="8411717039198648983" datatype="html">
+        <source>Object to the processing of your data (Art. 21 GDPR)</source>
+      </trans-unit>
+      <trans-unit id="3902384549847726259" datatype="html">
+        <source>Data portability (Art. 20 GDPR)</source>
+      </trans-unit>
+      <trans-unit id="2533984647587005595" datatype="html">
+        <source>To exercise these rights, you can contact me via email: luke.heller@dreadnoughtus.de</source>
+      </trans-unit>
+      <trans-unit id="161816363152980056" datatype="html">
+        <source>Data Retention</source>
+      </trans-unit>
+      <trans-unit id="1059914107666624479" datatype="html">
+        <source>I store your personal data only as long as necessary for the intended purpose or as required by law.</source>
+      </trans-unit>
+      <trans-unit id="1721635618128436974" datatype="html">
+        <source>Data Security</source>
+      </trans-unit>
+      <trans-unit id="6325451431376155378" datatype="html">
+        <source>I implement technical and organizational security measures to protect your data against manipulation, loss, destruction, or unauthorized access.</source>
+      </trans-unit>
+      <trans-unit id="1851193574480570184" datatype="html">
+        <source>Changes to This Privacy Policy</source>
+      </trans-unit>
+      <trans-unit id="4744535266745212094" datatype="html">
+        <source>I reserve the right to amend this privacy policy at any time to comply with current legal requirements. The latest version is available on my website under the specified contact address.</source>
+      </trans-unit>
+      <trans-unit id="6505197656529939278" datatype="html">
+        <source>Last updated: September 2025</source>
+      </trans-unit>
+      <trans-unit id="74409629521908011" datatype="html">
+        <source>Web Developer</source>
+      </trans-unit>
+      <trans-unit id="749091709256864465" datatype="html">
+        <source>Magdeburg Germany</source>
+      </trans-unit>
+      <trans-unit id="3562199946446423606" datatype="html">
+        <source>About me</source>
+      </trans-unit>
+      <trans-unit id="7091571651222742304" datatype="html">
+        <source>Projects</source>
+      </trans-unit>
+      <trans-unit id="2204489847164928310" datatype="html">
+        <source>It seems your name is missing</source>
+      </trans-unit>
+      <trans-unit id="8364441857743307938" datatype="html">
+        <source>Your email is required</source>
+      </trans-unit>
+      <trans-unit id="4721007402656921350" datatype="html">
+        <source> Privacy Policy </source>
+      </trans-unit>
+      <trans-unit id="5017936355659182149" datatype="html">
+        <source>Date: May 01, 2026</source>
+      </trans-unit>
+      <trans-unit id="8671457311897065003" datatype="html">
+        <source> Legal Notice </source>
+      </trans-unit>
+      <trans-unit id="9057321579184936025" datatype="html">
+        <source>A screenshot of Pepe, the character of sharki</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

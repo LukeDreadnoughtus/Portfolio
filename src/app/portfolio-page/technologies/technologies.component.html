@@ -1,0 +1,41 @@
+<section id="skills">
+    <div class="container">
+        <h4 i18n class="karla">Technologies</h4>
+        <div class="grid-container">
+            <app-card class="skill-set-container">
+                <h3 i18n class="fira">Skill Set</h3>
+                <p i18n class="skill-introduction karla">I create modern, user-friendly web apps with HTML, CSS, and
+                    JavaScript, strengthened by TypeScript and Angular.
+                    Using Material Design, Git, Firebase, and REST APIs, I build clean, scalable solutions.
+                    With a strong growth mindset, I keep learning and adapt quickly to new
+                    technologies.</p>
+                <p i18n class="skill-question fira">You need <span class="fira">another skill?</span></p>
+                <p i18n class="karla contact-paragraph">Feel free to contact me. I look forward to expanding on my previous
+                    knowledge.</p>
+                <button [routerLink]="['/']" fragment="contact" appButton class="karla navigate-to-link">
+                    <div i18n class="wrapper karla">
+                        Let's Talk
+                    </div>
+                </button>
+            </app-card>
+            <div class="skill-icons-container">
+                @for (skill of skills(); track $index) {
+                @if(skill.name === 'Growth mindset') {
+                <div class="future-skills-container"
+                    [ngClass]="{'mindset-blue-font' : skill.name === 'Growth mindset'}">
+                    <img [src]="skill.path" [alt]="skill.alt">
+                    <img class="technologies-to-learn" src="assets/img/technologies/learning-interest.svg"
+                        i18n-alt alt="Next technologies I aim to learn">
+                    <p class="fira skill-name">{{ skill.name }}</p>
+                </div>
+                } @else {
+                <div [ngClass]="{'mindset-blue-font' : skill.name === 'Growth mindset'}">
+                    <img [src]="skill.path" [alt]="skill.alt">
+                    <p class="fira skill-name">{{ skill.name }}</p>
+                </div>
+                }
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,209 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog {
+    padding: 0;
+    outline: none;
+    border: 1px solid $teal-dark;
+    border-radius: 30px;
+    background-image: url(../../../../assets/img/hero-section/hero-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-content-wrapper {
+    position: relative;
+}
+
+.wrapper {
+    padding: 5.688rem 5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+
+    >figure {
+        aspect-ratio: 520 / 370;
+        overflow: hidden;
+        max-width: 520px;
+        justify-self: flex-end;
+
+        >img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+    }
+}
+
+h2 {
+    color: $teal-dark;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-7xl;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h3 {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-5xl;
+    color: $white;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xl;
+    color: $teal-dark;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: 2.5rem;
+}
+
+p {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-l;
+    color: $white;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: 1.25rem;
+    max-width: 50ch;
+}
+
+.used-skills {
+    @include dFlex($g: 1rem, $jc: flex-start);
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.button-links {
+    @include dFlex($jc: flex-start, $g: 2rem);
+    margin-top: 2.5rem;
+}
+
+a {
+    @include dFlex($g: 0.25rem);
+}
+
+a img {
+    transition: transform 300ms ease-out;
+}
+
+a:hover img {
+    transform: translate(5px, -2px);
+}
+
+.close-btn {
+    position: absolute;
+    top: 3.5rem;
+    right: 5rem;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+}
+
+.close-btn path {
+    transition: fill 200ms ease-in;
+}
+
+.close-btn:hover {
+    transform: scale(1.5);
+}
+
+.close-btn:hover path {
+    fill: $teal-dark;
+}
+
+.next-project-container {
+    position: absolute;
+    bottom: 3.438rem;
+    right: 4.688rem;
+    @include dFlex($g: 0.5rem);
+    cursor: pointer;
+
+    >span {
+        color: $teal-dark;
+        font-size: $font-size-l;
+        font-weight: $font-weight-normal;
+        transition: color 100ms ease-in;
+    }
+
+    &:hover>span {
+        color: $white;
+    }
+
+    >svg {
+        transition: transform 100ms ease-in;
+    }
+
+    &:hover>svg {
+        transform: scale(1.2) translate(4px);
+    }
+}
+
+@media (max-width: 940px) {
+    .wrapper {
+        padding: 5.938rem 0.75rem;
+    }
+
+    .close-btn {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header-img'
+            'information';
+    }
+
+    .project-information {
+        grid-area: information;
+    }
+
+    .header-img {
+        grid-area: header-img;
+    }
+
+    figure {
+        width: 100%;
+    }
+
+    h3 {
+        margin-top: 0.5rem;
+    }
+
+    h4 {
+        margin-top: 2rem;
+    }
+
+    p {
+        margin-top: 1rem;
+    }
+
+    .used-skills {
+        margin-top: 1.25rem;
+    }
+
+    .button-links {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .next-project-container {
+        right: 1rem;
+        bottom: 1.875rem;
+    }
+}

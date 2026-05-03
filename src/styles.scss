@@ -1,0 +1,88 @@
+@import './variables.scss';
+
+*:not(dialog) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+
+    &::-webkit-scrollbar-thumb {
+        background: $teal-dark;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: lighten($black, 5%);
+    }
+
+    scrollbar-color: $teal-dark lighten($black, 5%);
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
+img,
+picture {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+@font-face {
+    font-family: 'FiraCode';
+    src: url(assets/fonts/FiraCode.ttf);
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url(assets/fonts/Karla.ttf);
+}
+
+.fira {
+    font-family: 'FiraCode', monospace;
+}
+
+.karla {
+    font-family: 'Karla', sans-serif;
+}

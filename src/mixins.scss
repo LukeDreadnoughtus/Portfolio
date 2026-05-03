@@ -1,0 +1,17 @@
+@mixin dFlex($jc: center, $ai: center, $g: 0) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+}
+
+@mixin container() {
+    margin-inline: auto;
+    padding-inline: 6rem;
+    max-width: 1440px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        padding-inline: 1rem;
+    }
+}

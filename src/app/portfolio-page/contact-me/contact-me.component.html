@@ -1,0 +1,70 @@
+<section id="contact">
+    <div class="container">
+        <div class="grid-container">
+            <article>
+                <h4 i18n class="karla">Contact me</h4>
+                <h3 i18n class="fira">Let's work together</h3>
+                <h4 i18n class="fira">Got a problem to solve?</h4>
+                <p i18n class="karla">Tell me about the challenge you’re facing and let’s explore how I can make your
+                    project a success.</p>
+                <p i18n class="karla">Need a Frontend developer? <span>Let's talk!</span></p>
+            </article>
+
+            <div>
+                <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+                    <div class="name-container" (click)="removeValidationError('name')">
+                        <label i18n class="fira" for="name">What's your name?</label>
+                        @if (!enteredNameInvalid()) {
+                        <input class="karla" type="text" name="name" id="name" i18n-placeholder
+                            placeholder="Your name goes here" formControlName="name">
+                        }
+                        @else {
+                        <p i18n class="karla invalid-message">It seems your
+                            name is missing</p>
+                        }
+                    </div>
+                    <div class="email-container" (click)="removeValidationError('email')">
+                        <label i18n class="fira" for="email">What's your email?</label>
+                        @if (!enteredEmailInvalid()) {
+                        <input class="karla" type="email" name="email" id="email" i18n-placeholder
+                            placeholder="youremail@email.com" formControlName="email">
+                        }
+                        @else {
+                        <p i18n class="karla invalid-message">Your email is
+                            required</p>
+                        }
+                    </div>
+                    <div class="interest-container" (click)="removeValidationError('message')">
+                        <label i18n class="fira" for="interest">How can I help you?</label>
+                        @if (!enteredMessageInvalid()) {
+                        <input class="karla" type="text" id="interest" name="message" i18n-placeholder
+                            placeholder="Hello Lukas, I am interested in..." formControlName="message">
+                        }
+                        @else {
+                        <p i18n class="karla invalid-message">What do you need to
+                            develop?</p>
+                        }
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="privacy-policy" id="privacy-policy" formControlName="checkbox">
+                        <label class="karla" for="privacy-policy">
+                            <span i18n>
+                                I've read the <span class="fira privacy-highlight">privacy policy</span>
+                                and
+                                agree to the processing of my data as outlined.
+                            </span>
+                        </label>
+                    </div>
+                    <p i18n [ngClass]="{ 'hideCheckBoxError' : checkboxValid() || !gotClicked() }"
+                        class="karla invalid-privacy-policy-message">Please accept the privacy policy.</p>
+                    <div class="btn-container">
+                        <button i18n appButton class="karla" type="submit">Say Hello ;&#41;</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @if (emailGotDelivered()) {
+    <app-contact-me-dialog (close)="closeDialog($event)" />
+    }
+</section>

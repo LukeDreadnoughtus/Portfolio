@@ -1,0 +1,41 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+.logo {
+    @include dFlex($g: 1rem);
+
+    &:hover {
+        .logo__initials {
+            color: transparent;
+            -webkit-text-stroke: 1px;
+            -webkit-text-stroke-color: $teal-dark;
+        }
+
+        .logo__fullname {
+            color: transparent;
+            -webkit-text-stroke: 1px;
+            -webkit-text-stroke-color: $white;
+        }
+    }
+}
+
+.logo__initials {
+    color: $teal-dark;
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-bold;
+    transform: scale(1.2);
+    line-height: 0.7;
+    transition: color 300ms ease-out, -webkit-text-stroke 300ms ease-out, -webkit-text-stroke-color 300ms ease-out;
+}
+
+.logo__initials-letter-rotate {
+    transform: rotate(90deg);
+}
+
+.logo__fullname {
+    color: white;
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-bold;
+    transition: color 300ms ease-out, -webkit-text-stroke 300ms ease-out, -webkit-text-stroke-color 300ms ease-out;
+    line-height: 0.9;
+}

@@ -1,0 +1,60 @@
+<dialog #dialog (keydown.Escape)="onEscCloseDialog($event)">
+    <div class="btn-content-wrapper">
+        <svg (click)="onCloseDialog()" class="close-btn" xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+            viewBox="0 0 48 48" fill="none">
+            <mask id="mask0_3001_2616" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="48"
+                height="48">
+                <rect width="48" height="48" fill="white" />
+            </mask>
+            <g mask="url(#mask0_3001_2616)">
+                <path
+                    d="M24.0001 25.454L16.8156 32.6385C16.6026 32.8512 16.3666 32.9512 16.1076 32.9385C15.8486 32.9255 15.6128 32.8127 15.4001 32.6C15.1874 32.3874 15.0811 32.145 15.0811 31.873C15.0811 31.6014 15.1874 31.359 15.4001 31.146L22.5461 24L15.3616 16.8655C15.1489 16.6525 15.0489 16.4102 15.0616 16.1385C15.0746 15.8669 15.1874 15.6245 15.4001 15.4115C15.6128 15.1989 15.8551 15.0925 16.1271 15.0925C16.3988 15.0925 16.6411 15.1989 16.8541 15.4115L24.0001 22.596L31.1346 15.4115C31.3476 15.1989 31.5836 15.0925 31.8426 15.0925C32.1016 15.0925 32.3374 15.1989 32.5501 15.4115C32.7708 15.6322 32.8811 15.8764 32.8811 16.144C32.8811 16.412 32.7708 16.6525 32.5501 16.8655L25.4041 24L32.5886 31.1845C32.8013 31.3975 32.9076 31.6335 32.9076 31.8925C32.9076 32.1515 32.8013 32.3874 32.5886 32.6C32.3679 32.8207 32.1238 32.931 31.8561 32.931C31.5881 32.931 31.3476 32.8207 31.1346 32.6L24.0001 25.454Z"
+                    fill="white" />
+            </g>
+        </svg>
+        <div class="wrapper">
+            <div class="grid-container">
+                <div class="project-information">
+                    <h2 class="karla">{{ data()[index()].id | padStart }}</h2>
+                    <h3 class="fira">{{ data()[index()].title }}</h3>
+                    <h4 i18n class="fira">What is this project about?</h4>
+                    <p class="karla">{{ data()[index()].information }}</p>
+                    <div class="used-skills">
+                        @for (skill of data()[index()].usedTech; track $index) {
+                        <img [src]="'assets/img/dialog/' + skill + '.svg'" i18n-alt [alt]="'Used skill ' + skill">
+                        } @empty {
+                        <p i18n class="karla">No skills have been used.</p>
+                        }
+                    </div>
+                    <div class="button-links">
+                        <a class="karla" [href]="data()[index()].github" target="_blank" appButton>
+                            <span i18n>Github</span>
+                            <img src="assets/img/dialog/arrow_outward.svg" i18n-alt alt="Arrow SVG">
+                        </a>
+                        <a class="karla" [href]="data()[index()].route" target="_blank" appButton>
+                            <span i18n>Live Test</span>
+                            <img src="assets/img/dialog/arrow_outward.svg" i18n-alt alt="Arrow SVG">
+                        </a>
+                    </div>
+                </div>
+                <figure class="header-img">
+                    <img [src]="data()[index()].snapshot" i18n-alt [alt]="'Screenshot from my ' + data()[index()].title + ' project'">
+                </figure>
+            </div>
+        </div>
+        <div (click)="onIncrementIndex()" class="next-project-container">
+            <span i18n class="karla">Next project</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <mask id="mask0_64219_863" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="4" width="32"
+                    height="32">
+                    <rect y="4" width="32" height="32" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_64219_863)">
+                    <path
+                        d="M22.7717 20.6667H7.33341C7.14364 20.6667 6.98508 20.603 6.85775 20.4757C6.73041 20.3484 6.66675 20.1898 6.66675 20C6.66675 19.8102 6.73041 19.6517 6.85775 19.5244C6.98508 19.397 7.14364 19.3334 7.33341 19.3334H22.7717L15.5207 12.082C15.3907 11.9522 15.3227 11.7992 15.3167 11.623C15.3107 11.447 15.3813 11.2855 15.5284 11.1384C15.6753 10.9966 15.8325 10.9244 16.0001 10.9217C16.1676 10.9192 16.3249 10.9915 16.4717 11.1384L24.5794 19.246C24.6959 19.3625 24.7775 19.4814 24.8244 19.6027C24.8715 19.724 24.8951 19.8565 24.8951 20C24.8951 20.1436 24.8715 20.276 24.8244 20.3974C24.7775 20.5187 24.6959 20.6376 24.5794 20.754L16.4717 28.8617C16.3471 28.9864 16.1954 29.053 16.0167 29.0617C15.8381 29.0701 15.6753 29.0035 15.5284 28.8617C15.3813 28.7146 15.3077 28.556 15.3077 28.386C15.3077 28.2158 15.3813 28.0572 15.5284 27.9104L22.7717 20.6667Z"
+                        fill="#3DCFB6" />
+                </g>
+            </svg>
+        </div>
+    </div>
+</dialog>

@@ -1,0 +1,43 @@
+@import '../variables.scss';
+
+app-header {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    z-index: 1000;
+}
+
+#cursor {
+  position: fixed;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 1001;
+  mix-blend-mode: screen;
+  will-change: top, left, transform;
+}
+
+#cursor::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle,
+    rgba(61, 207, 182, 0.50)  0%,
+    rgba(61, 207, 182, 0.30) 35%,
+    rgba(61, 207, 182, 0.16) 55%,
+    rgba(61, 207, 182, 0.08) 72%,
+    rgba(61, 207, 182, 0.04) 84%,
+    rgba(61, 207, 182, 0.02) 92%,
+    rgba(61, 207, 182, 0.00) 100%
+  );
+  filter: blur(8px);
+}
+
+
+
+

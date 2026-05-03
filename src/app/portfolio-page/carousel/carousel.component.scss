@@ -1,0 +1,221 @@
+@import '../../../mixins.scss';
+@import '../../../variables.scss';
+
+:host {
+    --card-gap: 4rem;
+}
+
+section {
+    background: $black;
+    padding-top: 9rem
+}
+
+.container {
+    @include container();
+    padding-inline: 0;
+}
+
+h3 {
+    color: $teal-dark;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xxl;
+    text-align: center;
+}
+
+.carousel__wrapper {
+    position: relative;
+
+    >.quotes {
+        position: absolute;
+        top: 0;
+        height: 274px;
+        width: 632px;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 100;
+
+        >img {
+            transform: translate(-49%, -12%);
+            position: relative;
+            z-index: 101;
+        }
+    }
+}
+
+.carousel {
+    margin-top: 3rem;
+    @include dFlex($g: var(--card-gap));
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.carousel::before,
+.carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.carousel::before {
+    left: 0;
+    background: linear-gradient(to right,
+            rgba(20, 20, 20, 0.65) 0%,
+            rgba(20, 20, 20, 0.40) 20%,
+            rgba(20, 20, 20, 0.15) 40%,
+            rgba(20, 20, 20, 0.0) 60%);
+}
+
+.carousel::after {
+    right: 0;
+    background: linear-gradient(to left,
+            rgba(20, 20, 20, 0.65) 0%,
+            rgba(20, 20, 20, 0.40) 20%,
+            rgba(20, 20, 20, 0.15) 40%,
+            rgba(20, 20, 20, 0.0) 60%);
+}
+
+app-carousel-card {
+    flex: 0 0 632px;
+}
+
+.move-left {
+    animation: move-left 0.7s forwards;
+}
+
+.move-right {
+    animation: move-right 0.7s forwards;
+}
+
+@keyframes move-right {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(calc(100% + var(--card-gap)));
+    }
+}
+
+@keyframes move-left {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--card-gap)));
+    }
+}
+
+.navigations {
+    margin-top: 3rem;
+    @include dFlex($g: 1.25rem);
+}
+
+.navigations_buttons {
+    background: transparent;
+
+    >svg {
+        transition: transform 300ms ease-out;
+
+        &:hover {
+            transform: scale(1.2);
+
+            .navigations_buttons-color {
+                fill: $teal-dark;
+            }
+        }
+    }
+}
+
+.navigations_buttons-color {
+    transition: fill 300ms ease-out, ;
+    fill: $white;
+}
+
+.pagination {
+    @include dFlex($g: 1.25rem);
+}
+
+.pagination__bullet {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: $white;
+}
+
+.pagination__bullet-active {
+    background-color: $teal-dark;
+}
+
+@media (max-width: 800px) {
+    app-carousel-card {
+        flex: 0 0 360px;
+    }
+
+    .carousel__wrapper {
+
+        >.quotes {
+            height: 360px;
+            width: 360px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding-top: 6.25rem;
+    }
+
+    .carousel {
+        margin-top: 2rem;
+    }
+
+    .navigations {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel__wrapper {
+
+        >.quotes {
+
+            >img {
+                transform: translate(0%, -50%);
+                width: 66px;
+                height: 48px;
+            }
+        }
+    }
+
+    :host {
+        --card-gap: 0.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    app-carousel-card {
+        flex: 0 0 280px;
+    }
+
+    .carousel__wrapper {
+
+        >.quotes {
+            height: 280px;
+            width: 280px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+
+    .carousel::after,
+    .carousel::before {
+        content: none;
+    }
+}

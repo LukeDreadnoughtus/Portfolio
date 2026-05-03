@@ -1,0 +1,171 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+section {
+    background-color: $black;
+}
+
+.container {
+    @include container();
+}
+
+h4 {
+    text-align: start;
+    color: $teal-dark;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xl;
+    margin-bottom: 1.25rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+}
+
+h3 {
+    font-weight: $font-weight-bold;
+    color: $teal-dark;
+    font-size: $font-size-5xl;
+    margin-bottom: 2.5rem;
+    text-align: start;
+}
+
+.skill-introduction {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-l;
+    color: $white;
+    margin-bottom: 2rem;
+}
+
+.skill-question,
+span {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xl;
+}
+
+.skill-question {
+    color: $white;
+}
+
+span {
+    color: $teal-dark;
+}
+
+.contact-paragraph {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-base;
+    color: $white;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.navigate-to-link {
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &:hover {
+        >.wrapper {
+            animation: moveLeft 4s infinite linear;
+            @include dFlex();
+        }
+    }
+
+    >.wrapper {
+
+        >div {
+            white-space: nowrap;
+            color: $white;
+            font-weight: $font-weight-normal;
+            font-size: $font-size-l;
+        }
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    49.99% {
+        transform: translateX(-300%);
+    }
+    50% {
+        transform: translateX(300%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.skill-icons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 116px;
+    row-gap: 2.5rem;
+    column-gap: 4.5rem;
+    justify-content: end;
+    justify-items: center;
+
+    >div {
+        @include dFlex($g: 0.5rem);
+        position: relative;
+        flex-direction: column;
+        text-align: center;
+
+        >img {
+            transition: transform 150ms ease-in;
+        }
+
+        &:hover {
+            >img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.skill-name {
+    font-size: $font-size-l;
+    font-weight: $font-weight-normal;
+    color: $white;
+}
+
+.mindset-blue-font {
+    >p {
+        transition: color 150ms ease-in;
+    }
+}
+
+.mindset-blue-font:hover {
+    >p {
+        color: $teal-dark;
+    }
+}
+
+.technologies-to-learn {
+    position: absolute;
+    width: 188px;
+    max-width: 1000px;
+    top: -110px;
+    left: -5px;
+    display: none;
+    transform: scale(1) !important;
+}
+
+.future-skills-container:hover .technologies-to-learn {
+    display: block;
+}
+
+@media (max-width: 1110px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-icons-container {
+        justify-content: center;
+    }
+}
