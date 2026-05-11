@@ -65,22 +65,24 @@ p {
     }
 
     >input {
-        width: 100%;
-        font-size: $font-size-l;
+    width: 100%;
+    font-size: $font-size-l;
+    color: $white;
+    font-weight: $font-weight-normal;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &:hover::placeholder {
         color: $white;
-        font-weight: $font-weight-normal;
-        background-color: transparent;
-
-        &:hover::placeholder {
-            color: $white;
-        }
-
-        &::placeholder {
-            font-size: $font-size-l;
-            color: $grey-white;
-            font-weight: $font-weight-normal;
-        }
     }
+
+    &::placeholder {
+        font-size: $font-size-l;
+        color: $grey-white;
+        font-weight: $font-weight-normal;
+    }
+}
 }
 
 input:-webkit-autofill,

@@ -12,39 +12,38 @@
 
             <div>
                 <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
-                    <div class="name-container" (click)="removeValidationError('name')">
-                        <label i18n class="fira" for="name">What's your name?</label>
-                        @if (!enteredNameInvalid()) {
-                        <input class="karla" type="text" name="name" id="name" i18n-placeholder
-                            placeholder="Your name goes here" formControlName="name">
-                        }
-                        @else {
-                        <p i18n class="karla invalid-message">It seems your
-                            name is missing</p>
-                        }
-                    </div>
-                    <div class="email-container" (click)="removeValidationError('email')">
-                        <label i18n class="fira" for="email">What's your email?</label>
-                        @if (!enteredEmailInvalid()) {
-                        <input class="karla" type="email" name="email" id="email" i18n-placeholder
-                            placeholder="youremail@email.com" formControlName="email">
-                        }
-                        @else {
-                        <p i18n class="karla invalid-message">Your email is
-                            required</p>
-                        }
-                    </div>
-                    <div class="interest-container" (click)="removeValidationError('message')">
-                        <label i18n class="fira" for="interest">How can I help you?</label>
-                        @if (!enteredMessageInvalid()) {
-                        <input class="karla" type="text" id="interest" name="message" i18n-placeholder
-                            placeholder="Hello Lukas, I am interested in..." formControlName="message">
-                        }
-                        @else {
-                        <p i18n class="karla invalid-message">What do you need to
-                            develop?</p>
-                        }
-                    </div>
+                    <div class="name-container">
+    <label i18n class="fira" for="name">What's your name?</label>
+
+    <input class="karla" type="text" name="name" id="name" i18n-placeholder
+        placeholder="Your name goes here" formControlName="name">
+
+    @if (showControlError('name')) {
+    <p class="karla invalid-message">Your name is required</p>
+    }
+</div>
+
+<div class="email-container">
+    <label i18n class="fira" for="email">What's your email?</label>
+
+    <input class="karla" type="email" name="email" id="email" i18n-placeholder
+        placeholder="youremail@email.com" formControlName="email">
+
+    @if (showControlError('email')) {
+    <p class="karla invalid-message">{{ getEmailErrorMessage() }}</p>
+    }
+</div>
+
+<div class="interest-container">
+    <label i18n class="fira" for="interest">How can I help you?</label>
+
+    <input class="karla" type="text" id="interest" name="message" i18n-placeholder
+    placeholder="Hello Deniz, I am interested in..." formControlName="message">
+
+    @if (showControlError('message')) {
+    <p class="karla invalid-message">Your message is required</p>
+    }
+</div>
                     <div class="checkbox-container">
                         <input type="checkbox" name="privacy-policy" id="privacy-policy" formControlName="checkbox">
                         <label class="karla" for="privacy-policy">

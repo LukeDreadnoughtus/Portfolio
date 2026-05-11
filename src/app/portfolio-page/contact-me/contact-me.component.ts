@@ -1,10 +1,31 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { ButtonComponent } from "../../shared/button/button.component";
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { ContactMeDialogComponent } from "./contact-me-dialog/contact-me-dialog.component";
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
+function detailedEmailValidator(control: AbstractControl): ValidationErrors | null {
+  const email = String(control.value ?? '').trim();
+
+  if (!email) return null;
+
+  if (!email.includes('@')) return { missingAt: true };
+
+  const [localPart, domainPart, ...extraParts] = email.split('@');
+
+  if (!localPart) return { missingLocalPart: true };
+  if (!domainPart || extraParts.length > 0) return { invalidEmailDomain: true };
+  if (!domainPart.includes('.')) return { missingDot: true };
+
+  const domainSections = domainPart.split('.');
+  const topLevelDomain = domainSections.at(-1) ?? '';
+
+  if (domainSections.some(section => section.length === 0)) return { invalidEmailDomain: true };
+  if (topLevelDomain.length < 2) return { missingTopLevelDomain: true };
+
+  return null;
+}
 
 function mustAcceptPrivacyPolicy(control: AbstractControl) {
   if (control.value === true) {
@@ -37,7 +58,7 @@ export class ContactMeComponent implements OnInit {
       validators: [Validators.required]
     }),
     email: new FormControl("", {
-      validators: [Validators.email, Validators.required, Validators.pattern(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/i)]
+      validators: [Validators.required, Validators.email, detailedEmailValidator]
     }),
     message: new FormControl("", {
       validators: [Validators.required]
@@ -77,6 +98,10 @@ export class ContactMeComponent implements OnInit {
     if (this.form.invalid) {
       if (!this.form.controls.name.valid) {
         this.enteredNameInvalid.set(true);
+      }
+
+      if (this.form.invalid) {
+        this.form.markAllAsTouched();
       }
 
       if (!this.form.controls.email.valid) {
@@ -127,14 +152,21 @@ export class ContactMeComponent implements OnInit {
    * 
    * @param formGroupMember - The name of the input field
    */
-  removeValidationError(formGroupMember: string) {
-    if (formGroupMember === 'name') {
-      this.enteredNameInvalid.set(false);
-    } else if (formGroupMember === 'email') {
-      this.enteredEmailInvalid.set(false);
-    } else if (formGroupMember === 'message') {
-      this.enteredMessageInvalid.set(false);
-    }
+  showControlError(controlName: 'name' | 'email' | 'message'): boolean {
+  const control = this.form.controls[controlName];
+  return control.invalid && (control.touched || control.dirty);
+  }
+
+  getEmailErrorMessage(): string {
+  const emailControl = this.form.controls.email;
+
+  if (emailControl.hasError('required')) return 'Your email is required';
+  if (emailControl.hasError('missingAt')) return 'Your email needs an @ sign';
+  if (emailControl.hasError('missingLocalPart')) return 'Your email needs something before the @ sign';
+  if (emailControl.hasError('missingDot')) return 'Your email needs a domain ending like .de or .com';
+  if (emailControl.hasError('missingTopLevelDomain')) return 'Your email ending needs at least two letters, like .de or .com';
+
+  return 'Please enter a valid email address';
   }
 
 
