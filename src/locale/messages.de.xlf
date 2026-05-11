@@ -115,8 +115,8 @@
         <target>Was meine Kolleginnen und Kollegen über mich sagen</target>
       </trans-unit>
       <trans-unit id="2603617104881771138" datatype="html">
-        <source>After unexpectedly losing my developer, I faced a critical challenge. When asked if he felt up to it, Luke simply said, “Let&apos;s try.” After just three months of onboarding, he independently managed clients with over 1,800 employees—impressively confident and professional.</source>
-        <target>Nach dem kurzfristigen Ausfall meines Programmierers stand ich vor einer großen Herausforderung. Auf die Frage, ob er sich das zutraut, sagte Luke nur: „Lassen Sie es uns versuchen.“ Bereits nach drei Monaten übernahm er eigenständig die Betreuung von Kunden mit über 1.800 Mitarbeitenden – souverän und professionell.</target>
+        <source>After unexpectedly losing my developer, I faced a critical challenge. When asked if he felt up to it, Luke simply said, “Let’s try.” After just three months of onboarding, he independently managed clients with over 1,800 employees—impressively confident and professional.</source>
+        <target state="new">Nach dem kurzfristigen Ausfall meines Programmierers stand ich vor einer großen Herausforderung. Auf die Frage, ob er sich das zutraut, sagte Luke nur: „Lassen Sie es uns versuchen.“ Bereits nach drei Monaten übernahm er eigenständig die Betreuung von Kunden mit über 1.800 Mitarbeitenden – souverän und professionell.</target>
       </trans-unit>
       <trans-unit id="6530941943841684664" datatype="html">
         <source>I met Luke at his previous company and was so impressed by his work that I actively sought to bring him into our organization.</source>
@@ -276,7 +276,7 @@
       </trans-unit>
       <trans-unit id="6486499449739671649" datatype="html">
         <source>I create modern, user-friendly web apps with HTML, CSS, and JavaScript, strengthened by TypeScript and Angular. Using Material Design, Git, Firebase, and REST APIs, I build clean, scalable solutions. With a strong growth mindset, I keep learning and adapt quickly to new technologies.</source>
-        <target state="new">Ich entwickle moderne, benutzerfreundliche Web-Apps mit HTML, CSS und JavaScript, ergänzt durch TypeScript und Angular. Mithilfe von Material Design, Git, Firebase und REST-APIs erstelle ich saubere, skalierbare Lösungen. Mit Scrum-Erfahrung und einer ausgeprägten Lernbereitschaft eigne ich mir schnell neue Technologien an und passe mich ihnen an.</target>
+        <target state="new">Ich entwickle moderne, benutzerfreundliche Web-Apps mit HTML, CSS und JavaScript, ergänzt durch TypeScript und Angular. Mithilfe von Material Design, Git, Firebase und REST-APIs erstelle ich saubere, skalierbare Lösungen. Mit Figma-Erfahrung und einer ausgeprägten Lernbereitschaft eigne ich mir schnell neue Technologien an und passe mich ihnen an.</target>
       </trans-unit>
       <trans-unit id="5136656872382480212" datatype="html">
         <source>You need <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;fira&quot;&gt;"/>another skill?<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>

@@ -60,9 +60,9 @@ export class TechnologiesComponent {
       name: 'REST-API'
     },
     {
-      path: 'assets/img/technologies/scrum.svg',
-      alt: 'Scrum Logo',
-      name: 'Scrum'
+      path: 'assets/img/technologies/mysql.svg',
+      alt: 'MySQL Logo',
+      name: 'MySQL'
     },
     {
       path: 'assets/img/technologies/growth-mindset.svg',
