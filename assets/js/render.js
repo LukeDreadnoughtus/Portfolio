@@ -5,13 +5,14 @@ import{initProjects}from'./features/projects.js';
 import{initCarousel}from'./features/carousel.js';
 import{initContact}from'./features/contact.js';
 import{routeHash}from'./features/legal.js';
+import{initCursor}from'./features/cursor.js';
 /**
- * Builds the complete interface from templates.
- * Feature modules are re-initialized after each language render.
+ * Renders header and landing content from isolated template files.
+ * After each render, feature modules are reconnected to the new markup.
  */
 export const render=()=>{setHtml(qs('#site-header'),headerTemplate());setHtml(qs('#app'),appTemplate());initAll();routeHash();};
 /**
- * Collects all feature initializers in one place.
- * This makes re-rendering safe after language changes.
+ * Collects every feature initializer used after template replacement.
+ * Language changes and legal-page restores reuse the same function.
  */
-export const initAll=()=>{initNavigation();initProjects();initCarousel();initContact();};
+export const initAll=()=>{initNavigation();initProjects();initCarousel();initContact();initCursor();};
