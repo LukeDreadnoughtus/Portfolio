@@ -53,6 +53,7 @@
     justify-content: space-between;
     align-items: flex-end;
     gap: 0;
+    z-index: 6;
 }
 
 .hero-bottom__side {
@@ -61,18 +62,30 @@
     align-items: center;
     gap: 1.5rem;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .hero-bottom__line--nav {
     border: 1px solid #3dcfb6;
     height: 240px;
     width: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .hero-bottom__line--social {
-    border: 1px solid #fff;
+    border: 1px solid #FFFFFF;
     height: 186px;
     width: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .hero-bottom__direction {
@@ -96,6 +109,11 @@
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     transition: color .3s ease-out;
+    font-family: Karla, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .hero-bottom__email:hover {
@@ -108,6 +126,10 @@
     align-items: center;
     gap: .75rem;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .hero-socials__link {
@@ -147,12 +169,15 @@
     backdrop-filter: blur(2.5px);
     padding-block: .75rem;
     scrollbar-width: none;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .marquee::-webkit-scrollbar {
     display: none;
 }
 
+.group,
 .marquee__group {
     display: flex;
     justify-content: center;
@@ -162,21 +187,23 @@
     animation: spin 20s infinite linear;
 }
 
+.group > span,
 .marquee__text {
     color: #3dcfb6;
     font-size: clamp(1.5rem, 1.4rem + .5vw, 2rem);
     font-weight: 400;
-    flex: 0 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
     align-content: center;
     white-space: nowrap;
 }
 
+.group > .dot,
 .marquee__dot {
     width: 8px;
     height: 8px;
     background-color: #3dcfb6;
     border-radius: 50%;
-    flex: 0 0 auto;
 }
 
 #cursor {
@@ -245,10 +272,6 @@
 
     .hero-bottom__line--social {
         height: 10px;
-    }
-
-    .marquee {
-        display: none;
     }
 }
 

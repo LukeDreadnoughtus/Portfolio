@@ -1,1 +1,98 @@
-.about-card,.skills-card{padding:36px}.about-icons{display:grid;gap:22px;margin-top:28px}.about-icons li{display:flex;gap:20px;align-items:flex-start;color:#d7d7d7}.about-icons img{width:32px}.profile-wrap{display:grid;place-items:center}.profile-img{border-radius:30px;border:1px solid #3dcfb6;box-shadow:28px 28px 0 #3dcfb633}.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:26px}.tech-item{display:grid;gap:10px;place-items:center;text-align:center}.tech-item img{height:56px}.tech-item:hover{color:#3dcfb6}.mindset{padding:22px;border-radius:20px;background:#fff1;margin-top:22px}.mindset strong{color:#3dcfb6}.footer{padding:48px 0;border-top:1px solid #3dcfb633}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.footer-links{display:flex;gap:24px}.legal-page{padding:150px 0 80px}.legal-page h1{color:#3dcfb6;font-family:FiraCode,monospace;margin-bottom:24px}.legal-page p{margin:12px 0;color:#d7d7d7;line-height:1.6}
+.about-card,
+.skills-card {
+    padding: 36px;
+}
+
+.about-icons {
+    display: grid;
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.about-icons li {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    color: #d7d7d7;
+}
+
+.about-icons img {
+    width: 32px;
+}
+
+.profile-wrap {
+    display: grid;
+    place-items: center;
+}
+
+.profile-img {
+    border-radius: 30px;
+    border: 1px solid #3dcfb6;
+    box-shadow: 28px 28px 0 #3dcfb633;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 26px;
+}
+
+.tech-item {
+    display: grid;
+    gap: 10px;
+    place-items: center;
+    text-align: center;
+}
+
+.tech-item img {
+    height: 56px;
+}
+
+.tech-item:hover {
+    color: #3dcfb6;
+}
+
+.mindset {
+    padding: 22px;
+    border-radius: 20px;
+    background: #fff1;
+    margin-top: 22px;
+}
+
+.mindset strong {
+    color: #3dcfb6;
+}
+
+.footer {
+    padding: 48px 0;
+    border-top: 1px solid #3dcfb633;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.legal-page {
+    padding: 150px 0 80px;
+}
+
+.legal-page h1 {
+    color: #3dcfb6;
+    font-family: FiraCode, monospace;
+    margin-bottom: 24px;
+}
+
+.legal-page p {
+    margin: 12px 0;
+    color: #d7d7d7;
+    line-height: 1.6;
+}
