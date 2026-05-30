@@ -1,26 +1,41 @@
 .references-section {
+    --card-gap: 4rem;
     background: #1c1c1c;
     padding-top: 9rem;
-    --card-gap: 4rem;
 }
 
-.references-section .container {
+.references-section__container {
     padding-inline: 0;
 }
 
-.references-section .section-eyebrow {
-    color: var(--teal);
+.references-section__heading {
+    color: #3dcfb6;
     font-weight: 700;
-    font-size: var(--fs-xxl);
+    font-size: clamp(1.5rem, 1.4rem + .5vw, 2rem);
     text-align: center;
-    margin-bottom: 0;
 }
 
-.references-section__title {
-    display: none;
+.carousel__wrapper {
+    position: relative;
 }
 
-.carousel {
+.carousel__wrapper > .quotes {
+    position: absolute;
+    top: 0;
+    height: 274px;
+    width: 632px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100;
+}
+
+.carousel__wrapper > .quotes > img {
+    transform: translate(-49%, -12%);
+    position: relative;
+    z-index: 101;
+}
+
+.carousel__cards {
     margin-top: 3rem;
     display: flex;
     justify-content: center;
@@ -31,8 +46,8 @@
     z-index: 0;
 }
 
-.carousel::before,
-.carousel::after {
+.carousel__cards::before,
+.carousel__cards::after {
     content: "";
     position: absolute;
     top: 0;
@@ -42,7 +57,7 @@
     z-index: 5;
 }
 
-.carousel::before {
+.carousel__cards::before {
     left: 0;
     background: linear-gradient(
         to right,
@@ -53,7 +68,7 @@
     );
 }
 
-.carousel::after {
+.carousel__cards::after {
     right: 0;
     background: linear-gradient(
         to left,
@@ -62,11 +77,6 @@
         #14141426,
         #14141400 60%
     );
-}
-
-.carousel__viewport {
-    flex: 0 0 632px;
-    position: relative;
 }
 
 .quote-card {
@@ -80,89 +90,116 @@
     flex-direction: column;
     height: 274px;
     color: #fff;
-    border: 1px solid var(--teal);
-}
-
-.quote-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-49%, -12%);
-    width: 90px;
-    height: 70px;
-    background: url('../img/carousel/quotes.svg') center/contain no-repeat;
-    z-index: 101;
+    border: 1px solid #3dcfb6;
+    flex: 0 0 632px;
 }
 
 .quote-card__text {
     font-size: clamp(1.125rem, 1.1rem + .125vw, 1.25rem);
-    line-height: normal;
-    color: #fff;
 }
 
-.quote-card__footer {
+.testimonial {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     width: 100%;
-    margin-top: 0;
-    color: #fff;
 }
 
-.quote-card__line {
+.testimonial__divider {
     width: 100%;
     border: none;
     border-top: 1px solid #fff;
-    height: 0;
-    background: transparent;
 }
 
-.quote-card__author {
-    font-size: var(--fs-body);
+.testimonial__name {
+    font-size: clamp(1rem, .975rem + .125vw, 1.125rem);
     white-space: nowrap;
 }
 
-.carousel__btn {
-    background: transparent;
-    color: #fff;
-    font-size: 2.5rem;
-    transition: transform .3s ease-out, color .3s ease-out;
-    position: relative;
-    z-index: 6;
+.move-left {
+    animation: move-left .7s forwards;
 }
 
-.carousel__btn:hover {
-    transform: scale(1.2);
-    color: var(--teal);
+.move-right {
+    animation: move-right .7s forwards;
 }
 
-.carousel-dots {
+.navigations {
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.25rem;
-    margin-top: 3rem;
 }
 
-.carousel-dots__dot {
+.navigations_buttons {
+    background: transparent;
+}
+
+.navigations_buttons > svg {
+    transition: transform .3s ease-out;
+}
+
+.navigations_buttons > svg:hover {
+    transform: scale(1.2);
+}
+
+.navigations_buttons > svg:hover .navigations_buttons-color {
+    fill: #3dcfb6;
+}
+
+.navigations_buttons-color {
+    transition: fill .3s ease-out;
+    fill: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.pagination__bullet {
     height: 8px;
     width: 8px;
     border-radius: 50%;
     background-color: #fff;
 }
 
-.carousel-dots__dot.active {
-    background-color: var(--teal);
+.pagination__bullet-active {
+    background-color: #3dcfb6;
+}
+
+@keyframes move-right {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(calc(100% + var(--card-gap)));
+    }
+}
+
+@keyframes move-left {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(calc(-100% - var(--card-gap)));
+    }
 }
 
 @media (max-width: 800px) {
-    .carousel__viewport {
-        flex: 0 0 360px;
+    .quote-card {
+        height: 360px;
+        flex-basis: 360px;
     }
 
-    .quote-card {
+    .carousel__wrapper > .quotes {
+        width: 360px;
         height: 360px;
     }
 }
@@ -172,8 +209,12 @@
         padding-top: 6.25rem;
     }
 
-    .carousel,
-    .carousel-dots {
+    .references-section__container {
+        padding-inline: 1rem;
+    }
+
+    .carousel__cards,
+    .navigations {
         margin-top: 2rem;
     }
 }
@@ -183,27 +224,27 @@
         --card-gap: .5rem;
     }
 
-    .quote-card::before {
+    .carousel__wrapper > .quotes > img {
         transform: translateY(-50%);
-        width: 66px;
-        height: 48px;
     }
 }
 
 @media (max-width: 450px) {
-    .carousel__viewport {
-        flex: 0 0 280px;
-    }
-
     .quote-card {
         height: 280px;
+        flex-basis: 280px;
         padding: 2rem 1rem;
+    }
+
+    .carousel__wrapper > .quotes {
+        width: 280px;
+        height: 280px;
     }
 }
 
 @media (max-width: 400px) {
-    .carousel::after,
-    .carousel::before {
+    .carousel__cards::after,
+    .carousel__cards::before {
         content: none;
     }
 }
