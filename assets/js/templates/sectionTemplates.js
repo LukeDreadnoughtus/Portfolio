@@ -55,3 +55,118 @@ const fact = (icon, text) => `
     src="assets/img/about-me/${icon}" alt="">
   <p class="karla">${text}</p>
 </li>`;
+
+/**
+ * Builds the technology and skill section.
+ * Text comes from i18n while icons come from the skills data list.
+ */
+export const skillsTemplate = () => `
+<section id="skills" class="skills-section app-section">
+  <div class="container">
+    <h4 class="section-eyebrow karla">${t().technologies}</h4>
+    <div class="skills-section__grid">
+      <article class="skills-card glass-card">
+        <h3 class="skills-card__title fira">${t().skillSet}</h3>
+        <p class="skills-card__text karla">${t().skillsText}</p>
+        ${skillQuestionTemplate()}
+        <p class="skills-card__contact karla">${t().skillContact}</p>
+        <a class="portfolio-btn scroll-btn karla" href="#contact">
+          <span class="btn-text">${t().letsTalk}</span>
+        </a>
+      </article>
+      <div class="skills-icons">
+        ${skills.map(skillTemplate).join('')}
+      </div>
+    </div>
+  </div>
+</section>`;
+
+/**
+ * Splits the skill question so the highlighted part stays stylable.
+ * The German and English strings both use an i18n accent value.
+ */
+const skillQuestionTemplate = () => {
+  const accent = t().skillQuestionAccent;
+  const base = t().skillQuestion.replace(accent, '');
+  return `
+<p class="skills-card__question fira">
+  ${base}<span>${accent}</span>
+</p>`;
+};
+
+/**
+ * Creates one skill icon item.
+ * Growth mindset also receives the decorative future-skill bubble.
+ */
+const skillTemplate = ([icon, name]) => `
+<div class="skills-icons__item ${futureClass(icon)}">
+  <img class="skills-icons__icon"
+    src="assets/img/technologies/${icon}.svg" alt="${name}">
+  ${futureBubble(icon)}
+  <p class="skills-icons__name fira">${name}</p>
+</div>`;
+
+const futureClass = icon => icon === 'growth-mindset'
+  ? 'skills-icons__item--future'
+  : '';
+
+const futureBubble = icon => icon === 'growth-mindset'
+  ? `<img class="skills-icons__bubble"
+      src="assets/img/technologies/learning-interest.svg"
+      alt="Future skills">`
+  : '';
+
+/**
+ * Builds the featured projects section.
+ * Headline copy is translated, project titles remain brand names.
+ */
+export const projectsTemplate = () => `
+<section id="projects" class="projects-section app-section">
+  <div class="container">
+    <div class="projects-section__head">
+      <h4 class="section-eyebrow karla">${t().portfolio}</h4>
+      <h3 class="projects-section__title fira">
+        ${t().featuredProjects}
+      </h3>
+      <p class="projects-section__copy karla">${t().projectsCopy}</p>
+    </div>
+    <div class="featured-projects">
+      <div class="project-list">
+        ${projects.map(projectRow).join('')}
+      </div>
+      ${projects.map(projectPreview).join('')}
+    </div>
+  </div>
+</section>`;
+
+/**
+ * Builds one project row button.
+ * Projects.js reads data attributes to open previews and dialogs.
+ */
+const projectRow = (project, index) => `
+<button class="project-card" data-project="${index}"
+  data-preview="${index}">
+  <span class="project-card__name fira">${project.title}</span>
+  <span class="project-card__techs karla">
+    ${project.tech.map(techItem).join('')}
+  </span>
+  <span class="project-card__arrow">↗</span>
+</button>`;
+
+const techItem = (tech, index) => `
+${index ? '<i class="project-card__divider"></i>' : ''}
+<span>${tech}</span>`;
+
+/**
+ * Builds the project preview image.
+ * Hover handlers toggle visibility through the preview index.
+ */
+const projectPreview = (project, index) => `
+<div class="project-preview is-hidden"
+  data-preview-image="${index}">
+  <img class="project-preview__image"
+    src="assets/img/featured-projects/${project.preview}"
+    alt="${project.title}">
+  <img class="project-preview__pattern"
+    src="assets/img/featured-projects/Capa_1.svg" alt="">
+</div>`;
