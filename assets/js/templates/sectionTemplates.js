@@ -170,3 +170,117 @@ const projectPreview = (project, index) => `
   <img class="project-preview__pattern"
     src="assets/img/featured-projects/Capa_1.svg" alt="">
 </div>`;
+
+/**
+ * Builds the contact area with translated form labels.
+ * Contact.js validates this form after render initialization.
+ */
+export const contactTemplate = () => `
+<section id="contact" class="contact-section app-section">
+  <div class="container contact-section__grid">
+    <div class="contact-copy">
+      <h4 class="section-eyebrow karla">${t().contactHead}</h4>
+      <h3 class="contact-copy__title fira">${t().contactTitle}</h3>
+      <h4 class="contact-copy__subtitle fira">${t().contactSub}</h4>
+      <p class="contact-copy__text karla">${t().contactText}</p>
+      ${needDeveloperTemplate()}
+    </div>
+    <form class="contact-form" novalidate>
+      ${field('name', t().name, t().namePh)}
+      ${field('email', t().email, t().emailPh)}
+      ${field('message', t().msg, t().msgPh)}
+      ${privacyTemplate()}
+      <p class="contact-form__status karla"></p>
+      <button class="portfolio-btn contact-form__submit karla"
+        type="submit">${t().send}</button>
+    </form>
+  </div>
+</section>`;
+
+/**
+ * Creates the small contact CTA below the intro text.
+ * It combines translated text with the static mail address.
+ */
+const needDeveloperTemplate = () => `
+<p class="contact-copy__text karla">
+  <span>${t().needDev}</span>
+  <a class="contact-copy__link"
+    href="mailto:luke.heller@dreadnoughtus.de">${t().talk}</a>
+</p>`;
+
+/**
+ * Creates one form input block.
+ * ContactTemplate uses it for name, email and message fields.
+ */
+const field = (name, label, placeholder) => `
+<div class="form-field">
+  <label class="form-field__label fira" for="${name}">${label}</label>
+  <input class="form-field__input karla" id="${name}"
+    name="${name}" placeholder="${placeholder}">
+  <span class="form-field__error karla"></span>
+</div>`;
+
+/**
+ * Builds the privacy checkbox markup.
+ * Contact.js checks this field during form validation.
+ */
+const privacyTemplate = () => `
+<label class="privacy-field">
+  <input class="privacy-field__checkbox" type="checkbox"
+    name="privacy">
+  <span class="privacy-field__box"></span>
+  <span class="karla">${t().privacy}</span>
+</label>`;
+
+/**
+ * Builds the footer.
+ * Role, location and link labels are translated through i18n.
+ */
+export const footerTemplate = () => `
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__meta">
+        ${logoTemplate()}
+        <p class="karla">${t().footerRole}</p>
+        <p class="karla">${t().footerLocation}</p>
+      </div>
+      <div class="footer__copyright">
+        <span class="fira">©</span>
+        <span class="fira">Lukas Heller</span>
+      </div>
+      <nav>
+        <ul class="footer__links">
+          ${footerLinksTemplate()}
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copyright-mobile">
+      <span class="fira">©</span>
+      <span class="fira">Lukas Heller 2026</span>
+    </div>
+  </div>
+</footer>`;
+
+/**
+ * Collects all footer links.
+ * FooterTemplate keeps its structure short by using this helper.
+ */
+const footerLinksTemplate = () => `
+${footerLink(socialLinks.github, t().github, true)}
+${footerLink(socialLinks.linkedIn, t().linkedIn, true)}
+${footerLink(socialLinks.email, t().emailLink)}
+${footerLink('#legal', t().legal)}
+${footerLink('#privacy', t().privacyTitle)}`;
+
+/**
+ * Builds one footer link list item.
+ * External links receive target blank while anchors stay local.
+ */
+const footerLink = (href, label, blank = false) => {
+  const target = blank ? ' target="_blank"' : '';
+  return `
+<li>
+  <a class="footer__link karla" href="${href}"${target}>${label}</a>
+</li>`;
+};
