@@ -1,15 +1,21 @@
-import{state,quotes}from'../data/content.js';
+import {
+  state,
+  i18n,
+  quotes
+} from '../data/content.js';
 
-const title='What my colleagues say about me';
+const t = () => i18n[state.lang];
+
+const local = value => value?.[state.lang] ?? value;
 
 /**
  * Builds the complete testimonial section used by the main layout.
  * The carousel module updates this markup after every slide movement.
  */
-export const carouselTemplate=()=>`
+export const carouselTemplate = () => `
 <section class="references-section app-section">
   <div class="container references-section__container">
-    <h3 class="references-section__heading fira">${title}</h3>
+    <h3 class="references-section__heading fira">${t().quoteTitle}</h3>
     <div class="carousel__wrapper">
       <div class="quotes" aria-hidden="true">
         <img src="assets/img/carousel/quotes.svg" alt="">
@@ -26,9 +32,9 @@ export const carouselTemplate=()=>`
  * Creates a single testimonial card from one data object.
  * It is intentionally separated because the carousel renders all cards.
  */
-export const quoteCardTemplate=quote=>`
+export const quoteCardTemplate = quote => `
 <article class="quote-card">
-  <p class="quote-card__text karla">${quote.text}</p>
+  <p class="quote-card__text karla">${local(quote.text)}</p>
   <div class="testimonial">
     <hr class="testimonial__divider">
     <p class="testimonial__name karla">${quote.name}</p>
@@ -39,30 +45,31 @@ export const quoteCardTemplate=quote=>`
  * Returns arrows and pagination beneath the quote cards.
  * Dots read the active index stored inside the shared page state.
  */
-export const navigationTemplate=()=>`
+export const navigationTemplate = () => `
 <div class="navigations">
   ${arrowButtonTemplate('left')}
   <div class="pagination">${quotes.map(dotTemplate).join('')}</div>
   ${arrowButtonTemplate('right')}
 </div>`;
 
-const dotTemplate=(_,index)=>`
+const dotTemplate = (_, index) => `
 <div class="pagination__bullet ${activeDot(index)}"></div>`;
 
-const activeDot=index=>index===state.quoteIndex
+const activeDot = index => index === state.quoteIndex
   ? 'pagination__bullet-active'
   : '';
 
-const arrowButtonTemplate=direction=>`
-<button class="navigations_buttons" data-quote="${direction}" aria-label="${direction}">
+const arrowButtonTemplate = direction => `
+<button class="navigations_buttons" data-quote="${direction}"
+  aria-label="${direction}">
   ${arrowSvgTemplate(direction)}
 </button>`;
 
-const arrowSvgTemplate=direction=>direction==='left'
+const arrowSvgTemplate = direction => direction === 'left'
   ? leftArrowTemplate()
   : rightArrowTemplate();
 
-const leftArrowTemplate=()=>`
+const leftArrowTemplate = () => `
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
   viewBox="0 0 40 40" fill="none">
   <mask id="mask-left" maskUnits="userSpaceOnUse" x="4" y="4"
@@ -74,7 +81,7 @@ const leftArrowTemplate=()=>`
   </g>
 </svg>`;
 
-const rightArrowTemplate=()=>`
+const rightArrowTemplate = () => `
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
   viewBox="0 0 40 40" fill="none">
   <mask id="mask-right" maskUnits="userSpaceOnUse" x="4" y="4"
@@ -86,7 +93,7 @@ const rightArrowTemplate=()=>`
   </g>
 </svg>`;
 
-const leftArrowPath=()=>[
+const leftArrowPath = () => [
   'M13.2283 20.6667L20.4793 27.918C20.6093 28.0478',
   '20.6773 28.2008 20.6833 28.377C20.6893 28.553',
   '20.6188 28.7146 20.4716 28.8617C20.3248 29.0034',
@@ -107,7 +114,7 @@ const leftArrowPath=()=>[
   '28.8564 20.6667 28.6666 20.6667H13.2283Z'
 ].join(' ');
 
-const rightArrowPath=()=>[
+const rightArrowPath = () => [
   'M26.7715 20.6667H11.3332C11.1434 20.6667',
   '10.9848 20.603 10.8575 20.4757C10.7302 20.3484',
   '10.6665 20.1898 10.6665 20C10.6665 19.8102',
