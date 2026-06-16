@@ -93,4 +93,3 @@ ${projectsTemplate()}
 ${carouselTemplate()}
 ${contactTemplate()}
 ${footerTemplate()}`;
-s
