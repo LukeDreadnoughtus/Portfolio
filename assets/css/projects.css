@@ -32,7 +32,9 @@
 }
 
 .project-list {
-    width: 70%;
+    width: calc(100% - 295px - 4.5rem);
+    flex: 0 0 calc(100% - 295px - 4.5rem);
+    min-width: 0;
 }
 
 .project-card {
@@ -87,8 +89,12 @@
 .project-preview {
     width: 295px;
     height: 192px;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    right: 0;
     display: block;
+    pointer-events: none;
+    transform: translateY(-50%);
 }
 
 .project-preview__image {
@@ -108,7 +114,8 @@
 }
 
 .project-preview.is-hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 @media (max-width: 1000px) {
