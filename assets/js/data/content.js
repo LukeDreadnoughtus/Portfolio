@@ -156,7 +156,7 @@ export const projects = [
     },
     tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
     github: '#',
-    live: '#'
+    live: 'http://join.dreadnoughtus.de/'
   },
   {
     title: 'Sharki',
@@ -172,7 +172,7 @@ export const projects = [
     },
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: '#',
-    live: '#'
+    live: 'http://sharki.dreadnoughtus.de/'
   },
   {
     title: 'Pokedex',
@@ -188,7 +188,7 @@ export const projects = [
     },
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: '#',
-    live: '#'
+    live: 'http://pokedex.dreadnoughtus.de/'
   }
 ];
 
