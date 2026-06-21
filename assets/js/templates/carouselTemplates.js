@@ -34,10 +34,12 @@ export const carouselTemplate = () => `
  */
 export const quoteCardTemplate = quote => `
 <article class="quote-card">
-  <p class="quote-card__text karla">${local(quote.text)}</p>
-  <div class="testimonial">
-    <hr class="testimonial__divider">
-    <p class="testimonial__name karla">${quote.name}</p>
+  <div class="quote-card__scroll">
+    <p class="quote-card__text karla">${local(quote.text)}</p>
+    <div class="testimonial">
+      <hr class="testimonial__divider">
+      <p class="testimonial__name karla">${quote.name}</p>
+    </div>
   </div>
 </article>`;
 
