@@ -248,3 +248,39 @@
         content: none;
     }
 }
+
+@media (max-width: 600px) {
+    .carousel__cards {
+        display: grid;
+        justify-items: center;
+        overflow: hidden;
+        gap: 0;
+    }
+
+    .quote-card {
+        grid-area: 1 / 1;
+        width: 100%;
+        max-width: 360px;
+        flex-basis: auto;
+        opacity: 0;
+        pointer-events: none;
+        transform: none;
+    }
+
+    .quote-card:first-child {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 2;
+    }
+
+    .quote-card.move-left,
+    .quote-card.move-right {
+        animation: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .quote-card {
+        max-width: 280px;
+    }
+}
