@@ -1,91 +1,185 @@
-import { qs, qsa } from '../utils/dom.js';
+import { qs } from '../utils/dom.js';
 import { state, i18n } from '../data/content.js';
 
 const t = () => i18n[state.lang];
+const fieldNames = ['name', 'email', 'message'];
 
 /**
- * Activates client-side validation for the contact form.
- * This static version shows a success state instead of sending data.
+ * Activates real-time validation for the contact form.
+ * The submit handler reuses the same field validators.
  */
 export const initContact = () => {
   const form = qs('.contact-form');
-  if (form) form.onsubmit = submitForm;
+  if (!form) return;
+  bindFormEvents(form);
+  form.onsubmit = submitForm;
 };
 
 /**
- * Handles submit, clears previous messages and validates fields.
- * A valid form receives a translated success message.
+ * Connects input, blur and checkbox changes to validation.
+ * This mirrors the instant feedback from the Angular form.
+ */
+const bindFormEvents = form => {
+  fieldNames.forEach(name => bindTextField(form[name]));
+  form.privacy.addEventListener('change', () => {
+    validatePrivacy(form.privacy, true);
+  });
+};
+
+/**
+ * Adds live validation to one text field.
+ * Input and blur both update the inline error message.
+ */
+const bindTextField = field => {
+  field.addEventListener('input', () => validateField(field, true));
+  field.addEventListener('blur', () => validateField(field, true));
+};
+
+/**
+ * Handles submit and validates every field at once.
+ * Success is shown only when all live checks are valid.
  */
 const submitForm = event => {
   event.preventDefault();
-  clearMessages();
-  validate(event.target) && showSuccess(event.target);
+  const form = event.target;
+  const valid = validateForm(form);
+  if (valid) showSuccess(form);
 };
 
 /**
- * Runs all form checks in one place.
- * Each helper writes translated error text where needed.
+ * Runs every validator and returns the combined result.
+ * The same helper powers submit and visible field state.
  */
-const validate = form => [
-  requireValue(form.name),
-  validateEmail(form.email),
-  requireValue(form.message),
-  validatePrivacy(form.privacy)
-].every(Boolean);
-
-/**
- * Checks whether a field contains enough user input.
- * It is reused for name and message validation.
- */
-const requireValue = field => field.value.trim().length > 1
-  || fail(field, t().requiredError);
-
-/**
- * Validates the mail field with a simple browser-side pattern.
- * The localized error is shown beside the input.
- */
-const validateEmail = field => emailPattern().test(field.value.trim())
-  || fail(field, t().emailError);
-
-const emailPattern = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-/**
- * Ensures that the privacy checkbox is accepted.
- * The status area receives the translated privacy message.
- */
-const validatePrivacy = field => field.checked
-  || setStatus(t().privacyError, false);
-
-/**
- * Writes an inline error message for one input field.
- * Validation helpers return false through this function.
- */
-const fail = (field, message) => {
-  const parent = field.closest('.form-field');
-  parent.querySelector('.form-field__error').textContent = message;
-  return false;
+const validateForm = form => {
+  const fieldsValid = fieldNames.every(name => {
+    return validateField(form[name], true);
+  });
+  const privacyValid = validatePrivacy(form.privacy, true);
+  return fieldsValid && privacyValid;
 };
 
 /**
- * Removes all old validation and status text.
- * SubmitForm calls it before running the current validation pass.
+ * Selects the right validation rule for a field.
+ * Name, email and message keep their own error wording.
  */
-const clearMessages = () => qsa(
-  '.form-field__error,.contact-form__status'
-).forEach(item => item.textContent = '');
+const validateField = (field, touched) => {
+  if (field.name === 'email') {
+    return validateEmail(field, touched);
+  }
+  return validateText(field, touched);
+};
+
+/**
+ * Checks name and message for real user input.
+ * Empty values produce the matching translated message.
+ */
+const validateText = (field, touched) => {
+  const valid = field.value.trim().length > 0;
+  const message = textError(field.name);
+  setFieldState(field, valid, touched, message);
+  return valid;
+};
+
+/**
+ * Checks the email value like the Angular reference.
+ * It reports missing @, domain and ending issues live.
+ */
+const validateEmail = (field, touched) => {
+  const error = getEmailError(field.value);
+  const valid = !error;
+  setFieldState(field, valid, touched, error);
+  return valid;
+};
+
+/**
+ * Validates the privacy checkbox in real time.
+ * The global status area shows the translated privacy error.
+ */
+const validatePrivacy = (field, touched) => {
+  const valid = field.checked;
+  const message = valid || !touched ? '' : t().privacyError;
+  setStatus(message, false);
+  return valid;
+};
+
+/**
+ * Writes field classes and inline error text.
+ * Validators use it to keep styling and messages aligned.
+ */
+const setFieldState = (field, valid, touched, message) => {
+  const wrapper = field.closest('.form-field');
+  const error = wrapper.querySelector('.form-field__error');
+  wrapper.classList.toggle('is-invalid', touched && !valid);
+  wrapper.classList.toggle('is-valid', touched && valid);
+  error.textContent = touched && !valid ? message : '';
+};
+
+/**
+ * Returns the translated required message per field.
+ * Name and message match the reference form wording.
+ */
+const textError = name => {
+  if (name === 'name') return t().nameRequired;
+  if (name === 'message') return t().messageRequired;
+  return t().requiredError;
+};
+
+/**
+ * Creates a detailed email error message.
+ * It follows the same order as the Angular validator.
+ */
+const getEmailError = value => {
+  const email = value.trim();
+  if (!email) return t().emailRequired;
+  if (!email.includes('@')) return t().emailMissingAt;
+  return getEmailDomainError(email);
+};
+
+/**
+ * Checks local part, domain and top-level ending.
+ * GetEmailError calls it after an @ sign exists.
+ */
+const getEmailDomainError = email => {
+  const parts = email.split('@');
+  if (!parts[0]) return t().emailMissingLocal;
+  if (parts.length !== 2 || !parts[1]) return t().emailInvalid;
+  return getEmailEndingError(parts[1]);
+};
+
+/**
+ * Checks dot structure and top-level domain length.
+ * Domain validation is split out to keep functions small.
+ */
+const getEmailEndingError = domain => {
+  const chunks = domain.split('.');
+  const ending = chunks.at(-1) || '';
+  if (!domain.includes('.')) return t().emailMissingDot;
+  if (chunks.some(part => !part)) return t().emailInvalid;
+  if (ending.length < 2) return t().emailMissingEnding;
+  return '';
+};
 
 /**
  * Shows the localized success message and resets fields.
- * It only runs after all validation helpers returned true.
+ * It also clears all live validation classes afterwards.
  */
 const showSuccess = form => {
   setStatus(t().successMessage, true);
   form.reset();
+  resetFields(form);
+};
+
+/**
+ * Removes validation classes after successful submit.
+ * The status message stays visible for user feedback.
+ */
+const resetFields = form => {
+  fieldNames.forEach(name => setFieldState(form[name], true, false, ''));
 };
 
 /**
  * Updates the global form status text.
- * Validation and success states share this small helper.
+ * Privacy errors and success states share this helper.
  */
 const setStatus = (message, success) => {
   const status = qs('.contact-form__status');
