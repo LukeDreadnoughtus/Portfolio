@@ -220,28 +220,4 @@ export const quotes = [
     text: {
       en: 'I met Luke at his previous company and was so impressed by his work that I actively sought to bring him into our organization.',
       de: 'Ich habe Luke in seinem vorherigen Unternehmen kennengelernt und war von seiner Arbeit so beeindruckt, dass ich ihn aktiv in unsere Organisation holen wollte.'
-    },
-    name: 'S. Schneider – Commissioning for digitalization'
-  },
-  {
-    text: {
-      en: 'Mr. Heller has recently joined our company and is already impressing with strong commitment and innovative solutions. His ability to bring in fresh perspectives and tackle challenges effectively is particularly noteworthy. For further suggestions and technical inquiries, I recommend contacting him directly.',
-      de: 'Herr Heller ist erst seit Kurzem in unserem Unternehmen und überzeugt bereits durch großes Engagement und innovative Lösungen. Besonders hervorzuheben ist seine Fähigkeit, frische Perspektiven einzubringen und Herausforderungen effektiv anzugehen. Für weitere Vorschläge und technische Fragen empfehle ich, ihn direkt zu kontaktieren.'
-    },
-    name: 'H. Hahndorf – Chief Executive Officer'
-  },
-  {
-    text: {
-      en: 'Finally, a true IT professional—even if he’s the only one who occasionally looks the part.',
-      de: 'Endlich ein echter IT-Profi – auch wenn er der Einzige ist, der manchmal auch so aussieht.'
-    },
-    name: 'U. Leuckert – IT Department Head'
-  },
-  {
-    text: {
-      en: 'How do you manage to start even Mondays with so much energy',
-      de: 'Wie schaffst du es, sogar montags mit so viel Energie zu starten?'
-    },
-    name: 'I. Wonofsky – Team Member'
-  }
-];
+    }
