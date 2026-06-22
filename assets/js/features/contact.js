@@ -159,31 +159,3 @@ const getEmailEndingError = domain => {
   return '';
 };
 
-/**
- * Shows the localized success message and resets fields.
- * It also clears all live validation classes afterwards.
- */
-const showSuccess = form => {
-  setStatus(t().successMessage, true);
-  form.reset();
-  resetFields(form);
-};
-
-/**
- * Removes validation classes after successful submit.
- * The status message stays visible for user feedback.
- */
-const resetFields = form => {
-  fieldNames.forEach(name => setFieldState(form[name], true, false, ''));
-};
-
-/**
- * Updates the global form status text.
- * Privacy errors and success states share this helper.
- */
-const setStatus = (message, success) => {
-  const status = qs('.contact-form__status');
-  status.textContent = message;
-  status.classList.toggle('success', success);
-  return success;
-};
