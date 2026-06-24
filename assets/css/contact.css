@@ -189,3 +189,18 @@
         padding: 2rem 1rem;
     }
 }
+.form-field.is-invalid .form-field__input {
+    color: #fff;
+}
+
+.form-field.is-invalid .form-field__label {
+    color: var(--teal);
+}
+
+.form-field.is-valid .form-field__input {
+    color: #fff;
+}
+
+.form-field__input:focus {
+    outline: none;
+}
