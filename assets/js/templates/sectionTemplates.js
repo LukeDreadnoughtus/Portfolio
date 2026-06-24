@@ -213,12 +213,30 @@ const needDeveloperTemplate = () => `
  * ContactTemplate uses it for name, email and message fields.
  */
 const field = (name, label, placeholder) => `
-<div class="form-field">
+<div class="form-field" data-field="${name}">
   <label class="form-field__label fira" for="${name}">${label}</label>
   <input class="form-field__input karla" id="${name}"
-    name="${name}" placeholder="${placeholder}">
+    name="${name}" type="${fieldType(name)}"
+    autocomplete="${autoComplete(name)}"
+    placeholder="${placeholder}">
   <span class="form-field__error karla"></span>
 </div>`;
+
+/**
+ * Selects the matching input type for the form field.
+ * Contact.js then validates the generated fields live.
+ */
+const fieldType = name => name === 'email' ? 'email' : 'text';
+
+/**
+ * Adds useful browser autocomplete values per field.
+ * The template keeps form markup small and reusable.
+ */
+const autoComplete = name => {
+  if (name === 'name') return 'name';
+  if (name === 'email') return 'email';
+  return 'off';
+};
 
 /**
  * Builds the privacy checkbox markup.

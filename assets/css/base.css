@@ -175,6 +175,15 @@ h4 {
     display: none;
 }
 
+.hero-section__actions .portfolio-btn:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.hero-section__actions .scroll-btn:hover > .btn-text {
+    animation: none;
+}
+
 .scroll-btn:hover > .btn-text {
     animation: move-left 4s infinite linear;
     display: flex;

@@ -51,7 +51,6 @@
     transition: opacity .3s ease-out;
 }
 
-.header__nav-link:hover::before,
 .header__nav-link.active::before {
     opacity: 1;
 }
@@ -68,9 +67,6 @@
     align-items: center;
 }
 
-.language-toggle:hover {
-    border-color: #fff;
-}
 
 .language-toggle__btn {
     background-color: unset;
@@ -88,9 +84,6 @@
     font-weight: 700;
 }
 
-.language-toggle__btn.active:hover {
-    cursor: default;
-}
 
 .logo {
     display: flex;
@@ -101,17 +94,6 @@
     cursor: pointer;
 }
 
-.logo:hover .logo__initials {
-    color: transparent;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: #3dcfb6;
-}
-
-.logo:hover .logo__fullname {
-    color: transparent;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: #fff;
-}
 
 .logo__initials {
     display: flex;

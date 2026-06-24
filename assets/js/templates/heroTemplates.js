@@ -93,7 +93,7 @@ const socialIcon = (file, href, label) => {
  */
 const marqueeTemplate = () => `
 <div class="marquee">
-  ${[1, 2, 3].map(marqueeGroup).join('')}
+  ${[1, 2].map(marqueeGroup).join('')}
 </div>`;
 
 /**
