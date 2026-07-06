@@ -1,0 +1,61 @@
+@media (max-width: 1000px) {
+    .app-section {
+        padding-top: 6.25rem;
+    }
+}
+
+@media (max-width: 940px) {
+    .hero-bottom__email {
+        display: none;
+    }
+
+    .dialog-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-inline: 1rem;
+    }
+
+    .hero-section__actions {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section__name {
+        font-size: 3.875rem;
+    }
+
+    .hero-section__role {
+        font-size: 1.5rem;
+    }
+
+    .hero-section__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .marquee__text {
+        font-size: 1.5rem;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    .project-dialog {
+        padding: .75rem;
+    }
+
+    .project-dialog__title,
+    .contact-copy__title,
+    .about-card__title,
+    .skills-card__title,
+    .projects-section__title,
+    .legal-page__title {
+        font-size: 3rem;
+    }
+}
