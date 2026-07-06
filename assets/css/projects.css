@@ -86,7 +86,16 @@
     display: none;
 }
 
-
+.project-preview {
+    width: 295px;
+    height: 192px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: block;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
 
 .project-preview__image {
     width: 100%;
