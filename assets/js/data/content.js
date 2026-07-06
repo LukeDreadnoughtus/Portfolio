@@ -1,5 +1,5 @@
 export const state = {
-  lang: 'de',
+  lang: 'en',
   projectIndex: 0,
   quoteIndex: 0
 };
