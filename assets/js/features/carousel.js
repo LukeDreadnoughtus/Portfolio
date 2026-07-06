@@ -4,6 +4,10 @@ import{carouselTemplate}from'../templates/carouselTemplates.js';
 
 const animationTime=700;
 
+/**
+ * Wires carousel controls and starts the automatic testimonial rotation.
+ * The section keeps all quote cards in the DOM like the Angular template.
+ */
 export const initCarousel=()=>{
   qsa('[data-quote]').forEach(connectButton);
   restartAutoSlide();
@@ -13,6 +17,10 @@ const connectButton=button=>{
   button.onclick=()=>scrollCarousel(button.dataset.quote);
 };
 
+/**
+ * Moves the quote cards left or right and blocks double clicks.
+ * After the CSS animation, the data order is rotated and re-rendered.
+ */
 const scrollCarousel=direction=>{
   if(state.quoteMoving)return;
   animateCards(direction);
@@ -48,7 +56,7 @@ const rotateRight=()=>{
 };
 
 const updateActiveIndex=direction=>{
-  const offset=direction==='left' ? 1 : -1;
+  const offset=direction==='left' ? -1 : 1;
   state.quoteIndex=nextIndex(offset);
 };
 
@@ -59,6 +67,7 @@ const nextIndex=offset=>{
 const moveClass=direction=>{
   return direction==='left' ? 'move-right' : 'move-left';
 };
+
 
 const renderCarousel=()=>{
   const section=qs('.references-section');
