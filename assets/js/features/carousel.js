@@ -69,6 +69,7 @@ const moveClass=direction=>{
 };
 
 
+
 const renderCarousel=()=>{
   const section=qs('.references-section');
   setHtml(section,innerSectionTemplate());
