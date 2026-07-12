@@ -60,7 +60,7 @@ const validateEmail = (field, touched) => {
 };
 
 const validatePrivacy = (field, touched) => {
-  const valid = !field.checked;
+  const valid = field.checked;
   const message = valid || !touched ? '' : t().privacyError;
   setStatus(message, false);
   return valid;
