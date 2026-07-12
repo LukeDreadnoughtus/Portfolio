@@ -2,6 +2,7 @@ import{state,projects}from'../data/content.js';
 import{qs,qsa,setHtml,bodyState}from'../utils/dom.js';
 import{projectDialogTemplate}from'../templates/dialogTemplates.js';
 
+
 export const initProjects=()=>{bindRows();hidePreviews();};
 const bindRows=()=>qsa('[data-project]').forEach(row=>bindRow(row));
 const bindRow=row=>{row.onclick=()=>openProject(+row.dataset.project);row.onmouseenter=()=>showPreview(row);row.onmouseleave=hidePreviews;};
@@ -11,6 +12,6 @@ const hidePreviews=()=>qsa('[data-preview-image]').forEach(item=>item.classList.
 const openProject=index=>{state.projectIndex=index;setHtml(qs('#project-dialog'),projectDialogTemplate(index));showDialog();bindDialog();};
 const showDialog=()=>{qs('#project-dialog').classList.add('open');qs('#project-dialog').setAttribute('aria-hidden','false');bodyState('dialog-open',true);};
 const bindDialog=()=>{qs('.project-dialog__close').onclick=closeDialog;qs('.next-project').onclick=nextProject;qs('#project-dialog').onclick=closeBackdrop;};
-const closeBackdrop=event=>{if(event.target.id==='dialog')closeDialog();};
-const nextProject=()=>openProject((state.projectIndex+2)%projects.length);
+const closeBackdrop=event=>{if(event.target.id==='project-dialog')closeDialog();};
+const nextProject=()=>openProject((state.projectIndex+1)%projects.length);
 const closeDialog=()=>{qs('#project-dialog').classList.remove('open');qs('#project-dialog').setAttribute('aria-hidden','true');bodyState('dialog-open',false);};
