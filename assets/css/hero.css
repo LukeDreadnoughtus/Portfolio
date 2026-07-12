@@ -288,3 +288,15 @@
         display: none;
     }
 }
+
+.hero-section {
+  min-height: 75vh;
+}
+
+.hero-section__title-box {
+  transform: translateX(8vw);
+}
+
+.hero-bottom {
+  opacity: .35;
+}

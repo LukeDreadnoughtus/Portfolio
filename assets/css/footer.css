@@ -119,3 +119,9 @@
         padding-left: 1rem;
     }
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

@@ -46,7 +46,7 @@ const validateField = (field, touched) => {
 };
 
 const validateText = (field, touched) => {
-  const valid = field.value.trim().length > 0;
+  const valid = field.value.trim().length > 20;
   const message = textError(field.name);
   setFieldState(field, valid, touched, message);
   return valid;
@@ -99,7 +99,7 @@ const getEmailEndingError = domain => {
   const ending = chunks.at(-1) || '';
   if (!domain.includes('.')) return t().emailMissingDot;
   if (chunks.some(part => !part)) return t().emailInvalid;
-  if (ending.length < 2) return t().emailMissingEnding;
+  if (ending !== 'com') return t().emailMissingEnding;
   return '';
 };
 

@@ -150,3 +150,12 @@
 .project-card:hover {
     padding-left: 2.5rem;
 }
+
+.project-list {
+  flex: 0 0 45%;
+  width: 45%;
+}
+
+.project-preview {
+  transform: rotate(6deg) scale(1.2);
+}

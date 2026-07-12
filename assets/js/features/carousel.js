@@ -84,7 +84,7 @@ const innerSectionTemplate=()=>{
 
 const restartAutoSlide=()=>{
   clearAutoSlide();
-  state.quoteTimer=window.setInterval(autoSlide,8000);
+  state.quoteTimer=window.setInterval(autoSlide,1200);
 };
 
 const clearAutoSlide=()=>{

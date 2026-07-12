@@ -366,3 +366,11 @@
     }
 }
 
+
+.carousel__cards {
+  overflow: visible;
+}
+
+.quote-card:nth-child(2) {
+  transform: translateY(50px);
+}

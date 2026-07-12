@@ -225,3 +225,12 @@
         flex-direction: column;
     }
 }
+
+.site-header {
+  transform: translateY(28px);
+  z-index: 1;
+}
+
+.desktop-nav {
+  flex-direction: column;
+}

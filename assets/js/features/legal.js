@@ -15,7 +15,7 @@ export const routeHash = () => {
   location.hash === '#legal'
     ? legalPage()
     : location.hash === '#privacy'
-      ? privacyPage()
+      ? legalPage()
       : restoreApp();
 };
 

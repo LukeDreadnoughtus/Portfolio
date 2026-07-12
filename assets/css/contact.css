@@ -212,3 +212,7 @@
 .contact-submit {
     align-self: flex-start;
 }
+
+.contact-section__grid {
+  grid-template-columns: 1fr 220px;
+}

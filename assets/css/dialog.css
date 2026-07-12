@@ -188,3 +188,8 @@
         bottom: 1.875rem;
     }
 }
+
+.project-dialog__card {
+  max-height: 55vh;
+  overflow: hidden;
+}

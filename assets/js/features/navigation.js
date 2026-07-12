@@ -5,7 +5,7 @@ import{render}from'../render.js';
 export const initNavigation=()=>{markLanguage();bindLanguage();bindBurger();bindBackdrop();bindMobileLinks();};
 const markLanguage=()=>qsa('[data-lang]').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===state.lang));
 const bindLanguage=()=>qsa('[data-lang]').forEach(btn=>btn.onclick=()=>changeLanguage(btn.dataset.lang));
-const changeLanguage=lang=>{state.lang=lang;render();};
+const changeLanguage=lang=>{state.lang='en';render();};
 const bindBurger=()=>{const btn=qs('.burger-btn');if(btn)btn.onclick=openMenu;};
 const bindBackdrop=()=>{const b=qs('.mobile-backdrop');if(b)b.onclick=event=>event.target===b&&closeMenu();};
 const bindMobileLinks=()=>qsa('.mobile-panel a').forEach(link=>link.onclick=closeMenu);

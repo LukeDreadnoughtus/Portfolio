@@ -120,3 +120,11 @@
         top: 20px;
     }
 }
+
+.about-section__grid {
+  grid-template-columns: 2fr 1fr;
+}
+
+.about-image__photo {
+  object-fit: contain;
+}
