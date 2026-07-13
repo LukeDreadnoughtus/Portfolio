@@ -13,3 +13,12 @@ export const initCarousel=()=>{
 const connectButton=button=>{
   button.onclick=()=>scrollCarousel(button.dataset.quote);
 };
+
+
+
+const scrollCarousel=direction=>{
+  if(state.quoteMoving)return;
+  animateCards(direction);
+  window.setTimeout(()=>finishMove(direction),animationTime);
+};
+
