@@ -8,10 +8,6 @@
     .hero-bottom__email {
         display: none;
     }
-
-    .dialog-actions {
-        justify-content: center;
-    }
 }
 
 @media (max-width: 768px) {
@@ -46,15 +42,8 @@
         padding: 1.5rem;
     }
 
-    .project-dialog {
-        padding: .75rem;
-    }
-
-    .project-dialog__title,
-    .contact-copy__title,
     .about-card__title,
     .skills-card__title,
-    .projects-section__title,
     .legal-page__title {
         font-size: 3rem;
     }

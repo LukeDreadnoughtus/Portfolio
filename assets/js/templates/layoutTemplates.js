@@ -5,8 +5,6 @@ import { logoTemplate } from './logoTemplates.js';
 import {
   aboutTemplate,
   skillsTemplate,
-  projectsTemplate,
-  contactTemplate,
   footerTemplate
 } from './sectionTemplates.js';
 
@@ -31,7 +29,6 @@ export const headerTemplate = () => `
       ${lang()}
       <li>${nav(t().nav[0], 'about-me')}</li>
       <li>${nav(t().nav[1], 'skills')}</li>
-      <li>${nav(t().nav[2], 'projects')}</li>
     </ul>
   </nav>
   ${logoTemplate()}
@@ -49,7 +46,6 @@ const mobileMenuTemplate = () => `
         ${lang()}
         <li>${nav(t().nav[0], 'about-me-img')}</li>
         <li>${nav(t().nav[1], 'skills')}</li>
-        <li>${nav(t().nav[2], 'projects')}</li>
       </ul>
     </nav>
   </div>
@@ -58,14 +54,13 @@ const mobileMenuTemplate = () => `
 const burgerIcon = () => `
 <svg viewBox="0 0 48 48">
   <path d="M8.8 34.5h30.4M8.8 24h30.4M8.8 14.2h30.4"
-    stroke="white" stroke-width="2" stroke-linecap="round"/>
+    stroke="white" stroke-width="2"
+    stroke-linecap="round"/>
 </svg>`;
 
 export const appTemplate = () => `
 ${heroTemplate()}
 ${aboutTemplate()}
 ${skillsTemplate()}
-${projectsTemplate()}
 ${carouselTemplate()}
-${contactTemplate()}
 ${footerTemplate()}`;

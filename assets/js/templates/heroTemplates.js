@@ -15,20 +15,12 @@ export const heroTemplate = () => `
     <div class="hero-section__title-box">
       <h2 class="hero-section__role fira">${t().role}</h2>
       <h1 class="hero-section__name karla">Lukas Heller</h1>
-      <div class="hero-section__actions">
-        ${heroAction('#projects', t().work)}
-        ${heroAction('#contact', t().contact)}
-      </div>
     </div>
   </div>
   ${heroBottomTemplate()}
   ${marqueeTemplate()}
 </section>`;
 
-const heroAction = (href, label) => `
-<a class="portfolio-btn scroll-btn karla" href="${href}">
-  <span class="btn-text">${label}</span>
-</a>`;
 
 const heroBottomTemplate = () => `
 <div class="container hero-bottom">
