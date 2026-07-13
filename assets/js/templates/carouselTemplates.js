@@ -35,3 +35,17 @@ export const quoteCardTemplate = quote => `
     </div>
   </div>
 </article>`;
+
+export const navigationTemplate = () => `
+<div class="navigations">
+  ${arrowButtonTemplate('left')}
+  <div class="pagination">${quotes.map(dotTemplate).join('')}</div>
+  ${arrowButtonTemplate('right')}
+</div>`;
+
+const dotTemplate = (_, index) => `
+<div class="pagination__bullet ${activeDot(index)}"></div>`;
+
+const activeDot = index => index === state.quoteIndex
+  ? 'pagination__bullet-active'
+  : '';

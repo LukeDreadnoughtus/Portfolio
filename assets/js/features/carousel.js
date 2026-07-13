@@ -22,3 +22,11 @@ const scrollCarousel=direction=>{
   window.setTimeout(()=>finishMove(direction),animationTime);
 };
 
+const animateCards=direction=>{
+  state.quoteMoving=true;
+  qsa('.quote-card').forEach(addMoveClass(direction));
+};
+
+const addMoveClass=direction=>card=>{
+  card.classList.add(moveClass(direction));
+};
