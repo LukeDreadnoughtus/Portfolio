@@ -59,3 +59,27 @@ const activeDot = index => index === state.quoteIndex
 const arrowSvgTemplate = direction => direction === 'left'
   ? leftArrowTemplate()
   : rightArrowTemplate();
+
+  const leftArrowTemplate = () => `
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+  viewBox="0 0 40 40" fill="none">
+  <mask id="mask-left" maskUnits="userSpaceOnUse" x="4" y="4"
+    width="32" height="32" style="mask-type:alpha">
+    <rect x="4" y="4" width="32" height="32" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mask-left)">
+    <path class="navigations_buttons-color" d="${leftArrowPath()}"/>
+  </g>
+</svg>`;
+
+const rightArrowTemplate = () => `
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+  viewBox="0 0 40 40" fill="none">
+  <mask id="mask-right" maskUnits="userSpaceOnUse" x="4" y="4"
+    width="32" height="32" style="mask-type:alpha">
+    <rect x="4" y="4" width="32" height="32" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mask-right)">
+    <path class="navigations_buttons-color" d="${rightArrowPath()}"/>
+  </g>
+</svg>`;
