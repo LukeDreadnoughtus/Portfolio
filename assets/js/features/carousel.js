@@ -49,3 +49,16 @@ const rotateLeft=()=>{
 const rotateRight=()=>{
   quotes.unshift(quotes.pop());
 };
+
+const updateActiveIndex=direction=>{
+  const offset=direction==='left' ? -1 : 1;
+  state.quoteIndex=nextIndex(offset);
+};
+
+const nextIndex=offset=>{
+  return (state.quoteIndex+offset+quotes.length)%quotes.length;
+};
+
+const moveClass=direction=>{
+  return direction==='left' ? 'move-right' : 'move-left';
+}; 
