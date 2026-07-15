@@ -49,3 +49,13 @@ const dotTemplate = (_, index) => `
 const activeDot = index => index === state.quoteIndex
   ? 'pagination__bullet-active'
   : '';
+
+  const arrowButtonTemplate = direction => `
+<button class="navigations_buttons" data-quote="${direction}"
+  aria-label="${direction}">
+  ${arrowSvgTemplate(direction)}
+</button>`;
+
+const arrowSvgTemplate = direction => direction === 'left'
+  ? leftArrowTemplate()
+  : rightArrowTemplate();
