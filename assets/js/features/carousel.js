@@ -30,3 +30,22 @@ const animateCards=direction=>{
 const addMoveClass=direction=>card=>{
   card.classList.add(moveClass(direction));
 };
+
+const finishMove=direction=>{
+  rotateQuotes(direction);
+  updateActiveIndex(direction);
+  renderCarousel();
+  state.quoteMoving=false;
+};
+
+const rotateQuotes=direction=>{
+  direction==='left' ? rotateRight() : rotateLeft();
+};
+
+const rotateLeft=()=>{
+  quotes.push(quotes.shift());
+};
+
+const rotateRight=()=>{
+  quotes.unshift(quotes.pop());
+};
