@@ -39,3 +39,19 @@ export const projectDialogTemplate = index => {
   </div>
 </div>`;
 };
+
+const dialogInfo = (project, index) => `
+<div class="project-dialog__info">
+  <div class="project-dialog__number fira">0${index + 1}</div>
+  <h2 class="project-dialog__title fira">${project.title}</h2>
+  <h3 class="project-dialog__subtitle fira">
+    ${local(project.subtitle)}
+  </h3>
+  <p class="project-dialog__copy karla">
+    ${local(project.desc)}
+  </p>
+  <div class="used-skills">
+    ${project.tech.map(skill).join('')}
+  </div>
+  ${dialogActions(project)}
+</div>`;
