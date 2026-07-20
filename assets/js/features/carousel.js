@@ -62,3 +62,20 @@ const nextIndex=offset=>{
 const moveClass=direction=>{
   return direction==='left' ? 'move-right' : 'move-left';
 }; 
+
+const renderCarousel=()=>{
+  const section=qs('.references-section');
+  setHtml(section,innerSectionTemplate());
+  initCarousel();
+};
+
+const innerSectionTemplate=()=>{
+  const html=carouselTemplate();
+  const parser=new DOMParser();
+  return parser.parseFromString(html,'text/html').body.firstChild.innerHTML;
+};
+
+const restartAutoSlide=()=>{
+  clearAutoSlide();
+  state.quoteTimer=window.setInterval(autoSlide,8000);
+};
