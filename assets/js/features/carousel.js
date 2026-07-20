@@ -79,3 +79,11 @@ const restartAutoSlide=()=>{
   clearAutoSlide();
   state.quoteTimer=window.setInterval(autoSlide,8000);
 };
+
+const clearAutoSlide=()=>{
+  if(state.quoteTimer)window.clearInterval(state.quoteTimer);
+};
+
+const autoSlide=()=>{
+  if(!state.quoteMoving)scrollCarousel('right');
+};
