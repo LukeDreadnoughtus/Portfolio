@@ -55,3 +55,11 @@ const dialogInfo = (project, index) => `
   </div>
   ${dialogActions(project)}
 </div>`;
+
+const dialogActions = project => `
+<div class="dialog-actions">
+  ${dialogLink(project.github, t().dialogGithub)}
+  ${dialogLink(project.live, t().dialogLive)}
+</div>`;
+
+
