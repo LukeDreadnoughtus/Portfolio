@@ -63,3 +63,9 @@ const dialogActions = project => `
 </div>`;
 
 
+const dialogLink = (href, label) => `
+<a class="portfolio-btn dialog-actions__link karla"
+  href="${href}" target="_blank">
+  ${label}
+  <img src="assets/img/dialog/arrow_outward.svg" alt="">
+</a>`;
