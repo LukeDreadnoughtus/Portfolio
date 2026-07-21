@@ -69,3 +69,11 @@ const dialogLink = (href, label) => `
   ${label}
   <img src="assets/img/dialog/arrow_outward.svg" alt="">
 </a>`;
+
+const dialogImage = project => `
+<figure class="project-dialog__figure">
+  <img class="project-dialog__image"
+    src="assets/img/dialog/${project.image}"
+    alt="${project.title}">
+</figure>`;
+
