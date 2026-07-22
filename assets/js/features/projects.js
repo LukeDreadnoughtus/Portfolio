@@ -8,7 +8,13 @@ const bindRow=row=>{row.onclick=()=>openProject(+row.dataset.project);row.onmous
 const showPreview=row=>{hidePreviews();qs(`[data-preview-image="${row.dataset.preview}"]`)?.classList.remove('is-hidden');};
 const hidePreviews=()=>qsa('[data-preview-image]').forEach(item=>item.classList.add('is-hidden'));
 
-
+/**
+ * Opens a project dialog and stores the selected index globally.
+ * The next-project button uses that index to cycle through projects.
+ */
 const openProject=index=>{state.projectIndex=index;setHtml(qs('#project-dialog'),projectDialogTemplate(index));showDialog();bindDialog();};
 const showDialog=()=>{qs('#project-dialog').classList.add('open');qs('#project-dialog').setAttribute('aria-hidden','false');bodyState('dialog-open',true);};
 const bindDialog=()=>{qs('.project-dialog__close').onclick=closeDialog;qs('.next-project').onclick=nextProject;qs('#project-dialog').onclick=closeBackdrop;};
+const closeBackdrop=event=>{if(event.target.id==='project-dialog')closeDialog();};
+const nextProject=()=>openProject((state.projectIndex+1)%projects.length);
+const closeDialog=()=>{qs('#project-dialog').classList.remove('open');qs('#project-dialog').setAttribute('aria-hidden','true');bodyState('dialog-open',false);};
