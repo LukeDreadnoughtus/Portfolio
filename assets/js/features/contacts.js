@@ -37,3 +37,10 @@ const validateForm = form => {
   const privacyValid = validatePrivacy(form.privacy, true);
   return fieldsValid && privacyValid;
 };
+
+const validateField = (field, touched) => {
+  if (field.name === 'email') {
+    return validateEmail(field, touched);
+  }
+  return validateText(field, touched);
+};
