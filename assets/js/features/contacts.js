@@ -52,3 +52,10 @@ const validateText = (field, touched) => {
   setFieldState(field, valid, touched, message);
   return valid;
 };
+
+const validateEmail = (field, touched) => {
+  const error = getEmailError(field.value);
+  const valid = !error;
+  setFieldState(field, valid, touched, error);
+  return valid;
+};
