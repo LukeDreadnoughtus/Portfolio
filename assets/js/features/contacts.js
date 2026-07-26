@@ -1,0 +1,5 @@
+import { qs } from '../utils/dom.js';
+import { state, i18n } from '../data/content.js';
+
+const t = () => i18n[state.lang];
+const fieldNames = ['name', 'email', 'message'];
