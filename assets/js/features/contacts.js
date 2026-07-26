@@ -29,3 +29,11 @@ const submitForm = event => {
   const valid = validateForm(form);
   if (valid) showSuccess(form);
 };
+
+const validateForm = form => {
+  const fieldsValid = fieldNames.every(name => {
+    return validateField(form[name], true);
+  });
+  const privacyValid = validatePrivacy(form.privacy, true);
+  return fieldsValid && privacyValid;
+};
