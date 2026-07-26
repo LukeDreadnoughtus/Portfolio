@@ -17,3 +17,8 @@ const bindFormEvents = form => {
     validatePrivacy(form.privacy, true);
   });
 };
+
+const bindTextField = field => {
+  field.addEventListener('input', () => validateField(field, true));
+  field.addEventListener('blur', () => validateField(field, true));
+};
