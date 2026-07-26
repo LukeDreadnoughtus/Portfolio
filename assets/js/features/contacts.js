@@ -22,3 +22,10 @@ const bindTextField = field => {
   field.addEventListener('input', () => validateField(field, true));
   field.addEventListener('blur', () => validateField(field, true));
 };
+
+const submitForm = event => {
+  event.preventDefault();
+  const form = event.target;
+  const valid = validateForm(form);
+  if (valid) showSuccess(form);
+};
