@@ -44,3 +44,11 @@ const validateField = (field, touched) => {
   }
   return validateText(field, touched);
 };
+
+
+const validateText = (field, touched) => {
+  const valid = field.value.trim().length > 0;
+  const message = textError(field.name);
+  setFieldState(field, valid, touched, message);
+  return valid;
+};
