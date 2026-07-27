@@ -74,3 +74,9 @@ const setFieldState = (field, valid, touched, message) => {
   wrapper.classList.toggle('is-valid', touched && valid);
   error.textContent = touched && !valid ? message : '';
 };
+
+const textError = name => {
+  if (name === 'name') return t().nameRequired;
+  if (name === 'message') return t().messageRequired;
+  return t().requiredError;
+};
