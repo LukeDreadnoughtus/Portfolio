@@ -87,3 +87,11 @@ const getEmailError = value => {
   if (!email.includes('@')) return t().emailMissingAt;
   return getEmailDomainError(email);
 };
+
+
+const getEmailDomainError = email => {
+  const parts = email.split('@');
+  if (!parts[0]) return t().emailMissingLocal;
+  if (parts.length !== 2 || !parts[1]) return t().emailInvalid;
+  return getEmailEndingError(parts[1]);
+};
