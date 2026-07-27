@@ -66,3 +66,11 @@ const validatePrivacy = (field, touched) => {
   setStatus(message, false);
   return valid;
 };
+
+const setFieldState = (field, valid, touched, message) => {
+  const wrapper = field.closest('.form-field');
+  const error = wrapper.querySelector('.form-field__error');
+  wrapper.classList.toggle('is-invalid', touched && !valid);
+  wrapper.classList.toggle('is-valid', touched && valid);
+  error.textContent = touched && !valid ? message : '';
+};
