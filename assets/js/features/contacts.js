@@ -80,3 +80,10 @@ const textError = name => {
   if (name === 'message') return t().messageRequired;
   return t().requiredError;
 };
+
+const getEmailError = value => {
+  const email = value.trim();
+  if (!email) return t().emailRequired;
+  if (!email.includes('@')) return t().emailMissingAt;
+  return getEmailDomainError(email);
+};
