@@ -95,3 +95,12 @@ const getEmailDomainError = email => {
   if (parts.length !== 2 || !parts[1]) return t().emailInvalid;
   return getEmailEndingError(parts[1]);
 };
+
+const getEmailEndingError = domain => {
+  const chunks = domain.split('.');
+  const ending = chunks.at(-1) || '';
+  if (!domain.includes('.')) return t().emailMissingDot;
+  if (chunks.some(part => !part)) return t().emailInvalid;
+  if (ending.length < 2) return t().emailMissingEnding;
+  return '';
+};
