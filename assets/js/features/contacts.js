@@ -104,3 +104,10 @@ const getEmailEndingError = domain => {
   if (ending.length < 2) return t().emailMissingEnding;
   return '';
 };
+
+const showSuccess = form => {
+  setStatus(t().successMessage, true);
+  form.reset();
+  resetFields(form);
+};
+
