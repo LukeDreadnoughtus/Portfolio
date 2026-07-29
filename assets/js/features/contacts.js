@@ -114,3 +114,10 @@ const showSuccess = form => {
 const resetFields = form => {
   fieldNames.forEach(name => setFieldState(form[name], true, false, ''));
 };
+
+const setStatus = (message, success) => {
+  const status = qs('.contact-form__status');
+  status.textContent = message;
+  status.classList.toggle('success', success);
+  return success;
+};
