@@ -111,3 +111,6 @@ const showSuccess = form => {
   resetFields(form);
 };
 
+const resetFields = form => {
+  fieldNames.forEach(name => setFieldState(form[name], true, false, ''));
+};
