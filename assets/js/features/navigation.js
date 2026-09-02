@@ -31,3 +31,16 @@ const markLanguage = () => {
     button.classList.toggle(ACTIVE_CLASS, isActive);
   });
 };
+
+/**
+ * Connects every language button with the language switch handler.
+ * The selected language is read from the button data attribute.
+ */
+const bindLanguage = () => {
+  const languageButtons = qsa('[data-lang]');
+
+  languageButtons.forEach(button => {
+    const language = button.dataset.lang;
+    button.onclick = () => changeLanguage(language);
+  });
+};
