@@ -1,5 +1,20 @@
-import{qs}from'../utils/dom.js';
+import { qs } from '../utils/dom.js';
 
-export const initCursor=()=>{const c=qs('#cursor');if(c)document.onmousemove=e=>moveCursor(c,e);};
+/**
+ * Initializes the custom glowing cursor effect.
+ * Mouse movement is tracked only when the cursor element exists.
+ */
+export const initCursor = () => {
+  const cursor = qs('#cursor');
+  if (!cursor) return;
+  document.onmousemove = event => moveCursor(cursor, event);
+};
 
-const moveCursor=(cursor,event)=>{cursor.style.top=`${event.clientX}px`;cursor.style.left=`${event.clientY}px`;};
+/**
+ * Moves the decorative cursor to the current mouse position.
+ * The element follows the pointer by updating its top and left styles.
+ */
+const moveCursor = (cursor, event) => {
+  cursor.style.top = `${event.clientY}px`;
+  cursor.style.left = `${event.clientX}px`;
+};
