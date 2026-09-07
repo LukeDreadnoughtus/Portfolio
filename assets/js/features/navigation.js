@@ -79,3 +79,16 @@ const bindBackdrop = () => {
     if (clickedBackdrop) closeMenu();
   };
 };
+
+/**
+ * Opens the mobile navigation and updates related UI states.
+ * Backdrop, burger icon and body scrolling are changed together.
+ */
+const openMenu = () => {
+  const backdrop = qs('.mobile-backdrop');
+  const burgerButton = qs('.burger-btn');
+
+  backdrop?.classList.add(MENU_OPEN_CLASS);
+  burgerButton?.classList.add(BURGER_OPEN_CLASS);
+  bodyState('menu-open', true);
+};
