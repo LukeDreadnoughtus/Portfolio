@@ -44,3 +44,23 @@ const bindLanguage = () => {
     button.onclick = () => changeLanguage(language);
   });
 };
+
+/**
+ * Stores the new language and rerenders the application.
+ * Rendering also reconnects navigation events afterwards.
+ */
+const changeLanguage = language => {
+  state.lang = language;
+  render();
+};
+
+/**
+ * Connects the burger button with the mobile menu opener.
+ * Missing header markup is ignored safely.
+ */
+const bindBurger = () => {
+  const burgerButton = qs('.burger-btn');
+  if (!burgerButton) return;
+
+  burgerButton.onclick = openMenu;
+};
