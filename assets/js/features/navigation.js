@@ -92,3 +92,24 @@ const openMenu = () => {
   burgerButton?.classList.add(BURGER_OPEN_CLASS);
   bodyState('menu-open', true);
 };
+
+/**
+ * Starts section observation after the rendered DOM is available.
+ * Active navigation links then follow the visible portfolio section.
+ */
+export const observeNavigation = () => {
+  setTimeout(createObserver, 0);
+};
+
+/**
+ * Creates one observer and registers all portfolio sections with it.
+ * Sharing the observer keeps section tracking compact and consistent.
+ */
+const createObserver = () => {
+  const sections = qsa('main section[id]');
+  const sectionObserver = createSectionObserver();
+
+  sections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+};
