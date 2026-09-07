@@ -64,3 +64,18 @@ const bindBurger = () => {
 
   burgerButton.onclick = openMenu;
 };
+
+
+/**
+ * Closes the mobile menu when the backdrop itself is clicked.
+ * Clicks inside the navigation panel do not trigger this handler.
+ */
+const bindBackdrop = () => {
+  const backdrop = qs('.mobile-backdrop');
+  if (!backdrop) return;
+
+  backdrop.onclick = event => {
+    const clickedBackdrop = event.target === backdrop;
+    if (clickedBackdrop) closeMenu();
+  };
+};
