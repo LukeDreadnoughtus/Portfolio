@@ -113,3 +113,12 @@ const createObserver = () => {
     sectionObserver.observe(section);
   });
 };
+
+/**
+ * Builds the IntersectionObserver used for active navigation states.
+ * A section counts as active when roughly 45 percent is visible.
+ */
+const createSectionObserver = () => {
+  const options = { threshold: 0.45 };
+  return new IntersectionObserver(onIntersect, options);
+};
