@@ -13,3 +13,12 @@ export const initProjects = () => {
   bindRows();
   hidePreviews();
 };
+
+/**
+ * Finds all project rows and gives each one its own event handlers.
+ * Row-specific behavior stays inside the bindRow helper.
+ */
+const bindRows = () => {
+  const projectRows = qsa('[data-project]');
+  projectRows.forEach(row => bindRow(row));
+};
