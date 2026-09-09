@@ -34,3 +34,15 @@ const bindRow = row => {
   row.onmouseenter = () => showPreview(row);
   row.onmouseleave = hidePreviews;
 };
+
+/**
+ * Shows the preview image that belongs to the hovered project row.
+ * Existing previews are hidden first so only one image is visible.
+ */
+const showPreview = row => {
+  const previewId = row.dataset.preview;
+  const previewImage = qs(`[data-preview-image="${previewId}"]`);
+
+  hidePreviews();
+  previewImage?.classList.remove(HIDDEN_CLASS);
+};
