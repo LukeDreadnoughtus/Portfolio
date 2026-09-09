@@ -46,3 +46,12 @@ const showPreview = row => {
   hidePreviews();
   previewImage?.classList.remove(HIDDEN_CLASS);
 };
+
+/**
+ * Hides every project preview image.
+ * It is used during initialization and when hover ends.
+ */
+const hidePreviews = () => {
+  const previewImages = qsa('[data-preview-image]');
+  previewImages.forEach(image => image.classList.add(HIDDEN_CLASS));
+};
