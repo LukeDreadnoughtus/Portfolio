@@ -22,3 +22,15 @@ const bindRows = () => {
   const projectRows = qsa('[data-project]');
   projectRows.forEach(row => bindRow(row));
 };
+
+/**
+ * Connects click and hover behavior for one project row.
+ * Data attributes provide the project index and preview reference.
+ */
+const bindRow = row => {
+  const projectIndex = Number(row.dataset.project);
+
+  row.onclick = () => openProject(projectIndex);
+  row.onmouseenter = () => showPreview(row);
+  row.onmouseleave = hidePreviews;
+};
