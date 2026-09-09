@@ -55,3 +55,14 @@ const hidePreviews = () => {
   const previewImages = qsa('[data-preview-image]');
   previewImages.forEach(image => image.classList.add(HIDDEN_CLASS));
 };
+
+/**
+ * Opens the selected project and stores its index globally.
+ * The stored index is later reused by the next-project button.
+ */
+const openProject = index => {
+  state.projectIndex = index;
+  renderProjectDialog(index);
+  showDialog();
+  bindDialog();
+};
