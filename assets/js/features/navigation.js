@@ -122,3 +122,26 @@ const createSectionObserver = () => {
   const options = { threshold: 0.45 };
   return new IntersectionObserver(onIntersect, options);
 };
+
+/**
+ * Checks observer entries and activates links for visible sections.
+ * Entries outside the viewport are ignored.
+ */
+const onIntersect = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) activate(entry.target.id);
+  });
+};
+
+/**
+ * Marks navigation links that belong to the active section.
+ * All other navigation links have their active state removed.
+ */
+const activate = sectionId => {
+  const navigationLinks = qsa('[data-nav]');
+
+  navigationLinks.forEach(link => {
+    const isActive = link.dataset.nav === sectionId;
+    link.classList.toggle(ACTIVE_CLASS, isActive);
+  });
+};
