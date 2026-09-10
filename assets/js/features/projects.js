@@ -76,3 +76,15 @@ const renderProjectDialog = index => {
   const dialogContent = projectDialogTemplate(index);
   setHtml(dialog, dialogContent);
 };
+
+/**
+ * Makes the project dialog visible and locks the page behind it.
+ * The aria state is updated together with the visual state.
+ */
+const showDialog = () => {
+  const dialog = qs('#project-dialog');
+
+  dialog.classList.add(OPEN_CLASS);
+  dialog.setAttribute('aria-hidden', 'false');
+  bodyState('dialog-open', true);
+};
