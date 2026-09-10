@@ -66,3 +66,13 @@ const openProject = index => {
   showDialog();
   bindDialog();
 };
+
+/**
+ * Renders the selected project content into the dialog container.
+ * Keeping rendering separate makes openProject easier to read.
+ */
+const renderProjectDialog = index => {
+  const dialog = qs('#project-dialog');
+  const dialogContent = projectDialogTemplate(index);
+  setHtml(dialog, dialogContent);
+};
