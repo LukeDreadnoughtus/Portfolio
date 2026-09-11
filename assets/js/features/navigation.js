@@ -10,14 +10,13 @@ const BURGER_OPEN_CLASS = 'is-open';
  * Activates language buttons, burger menu and mobile navigation events.
  * It runs after every template render because header markup is replaced.
  */
-
-import { state } from '../data/content.js';
-import { qs, qsa, bodyState } from '../utils/dom.js';
-import { render } from '../render.js';
-
-const ACTIVE_CLASS = 'active';
-const MENU_OPEN_CLASS = 'open';
-const BURGER_OPEN_CLASS = 'is-open';
+export const initNavigation = () => {
+  markLanguage();
+  bindLanguage();
+  bindBurger();
+  bindBackdrop();
+  bindMobileLinks();
+};
 
 /**
  * Marks the button for the currently selected language as active.
@@ -65,7 +64,6 @@ const bindBurger = () => {
   burgerButton.onclick = openMenu;
 };
 
-
 /**
  * Closes the mobile menu when the backdrop itself is clicked.
  * Clicks inside the navigation panel do not trigger this handler.
@@ -81,6 +79,17 @@ const bindBackdrop = () => {
 };
 
 /**
+ * Connects all mobile navigation links with the menu closer.
+ * This hides the panel immediately after choosing a section.
+ */
+const bindMobileLinks = () => {
+  const mobileLinks = qsa('.mobile-panel a');
+  mobileLinks.forEach(link => {
+    link.onclick = closeMenu;
+  });
+};
+
+/**
  * Opens the mobile navigation and updates related UI states.
  * Backdrop, burger icon and body scrolling are changed together.
  */
@@ -91,6 +100,19 @@ const openMenu = () => {
   backdrop?.classList.add(MENU_OPEN_CLASS);
   burgerButton?.classList.add(BURGER_OPEN_CLASS);
   bodyState('menu-open', true);
+};
+
+/**
+ * Closes the mobile navigation and resets related UI states.
+ * It is reused by backdrop clicks and mobile navigation links.
+ */
+const closeMenu = () => {
+  const backdrop = qs('.mobile-backdrop');
+  const burgerButton = qs('.burger-btn');
+
+  backdrop?.classList.remove(MENU_OPEN_CLASS);
+  burgerButton?.classList.remove(BURGER_OPEN_CLASS);
+  bodyState('menu-open', false);
 };
 
 /**
