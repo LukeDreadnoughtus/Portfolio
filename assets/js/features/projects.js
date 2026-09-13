@@ -87,4 +87,27 @@ const showDialog = () => {
   dialog.classList.add(OPEN_CLASS);
   dialog.setAttribute('aria-hidden', 'false');
   bodyState('dialog-open', true);
+};,
+
+/**
+ * Connects close, next-project and backdrop events in the dialog.
+ * It runs after each dialog render because its inner markup changes.
+ */
+const bindDialog = () => {
+  const closeButton = qs('.project-dialog__close');
+  const nextButton = qs('.next-project');
+  const dialog = qs('#project-dialog');
+
+  closeButton.onclick = closeDialog;
+  nextButton.onclick = nextProject;
+  dialog.onclick = closeBackdrop;
+};
+
+/**
+ * Closes the dialog only when the outer backdrop was clicked.
+ * Clicks on project content inside the dialog stay untouched.
+ */
+const closeBackdrop = event => {
+  const clickedBackdrop = event.target.id === 'project-dialog';
+  if (clickedBackdrop) closeDialog();
 };
