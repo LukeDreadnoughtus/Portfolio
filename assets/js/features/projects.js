@@ -87,7 +87,7 @@ const showDialog = () => {
   dialog.classList.add(OPEN_CLASS);
   dialog.setAttribute('aria-hidden', 'false');
   bodyState('dialog-open', true);
-};,
+};
 
 /**
  * Connects close, next-project and backdrop events in the dialog.
@@ -120,3 +120,4 @@ const nextProject = () => {
   const nextIndex = (state.projectIndex + 1) % projects.length;
   openProject(nextIndex);
 };
+
