@@ -4,6 +4,8 @@ import {
   projects
 } from '../data/content.js';
 
+const t = () => i18n[state.lang];
+
 const local = value => value?.[state.lang] ?? value;
 
 const iconFile = name => name === 'Firebase'
@@ -14,7 +16,11 @@ const iconFile = name => name === 'Firebase'
       ? 'HTML.svg'
       : 'JavaScript.svg';
 
-      const skill = name => `
+/**
+ * Builds one used-skill badge for the project dialog.
+ * ProjectDialogTemplate maps the current project tech list to it.
+ */
+const skill = name => `
 <span class="used-skills__item karla">
   <img class="used-skills__icon"
     src="assets/img/dialog/${iconFile(name)}"
@@ -22,6 +28,10 @@ const iconFile = name => name === 'Firebase'
   ${name}
 </span>`;
 
+/**
+ * Creates the complete project dialog markup.
+ * Projects.js injects it and binds close and next-project actions.
+ */
 export const projectDialogTemplate = index => {
   const project = projects[index];
   return `
@@ -40,6 +50,10 @@ export const projectDialogTemplate = index => {
 </div>`;
 };
 
+/**
+ * Builds the textual dialog column.
+ * It reads translated project subtitle and description values.
+ */
 const dialogInfo = (project, index) => `
 <div class="project-dialog__info">
   <div class="project-dialog__number fira">0${index + 1}</div>
@@ -56,13 +70,20 @@ const dialogInfo = (project, index) => `
   ${dialogActions(project)}
 </div>`;
 
+/**
+ * Builds the external dialog action buttons.
+ * Button labels are translated through the shared i18n state.
+ */
 const dialogActions = project => `
 <div class="dialog-actions">
   ${dialogLink(project.github, t().dialogGithub)}
   ${dialogLink(project.live, t().dialogLive)}
 </div>`;
 
-
+/**
+ * Creates one project dialog link.
+ * DialogActions uses it for GitHub and live test buttons.
+ */
 const dialogLink = (href, label) => `
 <a class="portfolio-btn dialog-actions__link karla"
   href="${href}" target="_blank">
@@ -70,6 +91,10 @@ const dialogLink = (href, label) => `
   <img src="assets/img/dialog/arrow_outward.svg" alt="">
 </a>`;
 
+/**
+ * Returns the project screenshot figure.
+ * ProjectDialogTemplate places it beside the translated text column.
+ */
 const dialogImage = project => `
 <figure class="project-dialog__figure">
   <img class="project-dialog__image"
@@ -77,3 +102,10 @@ const dialogImage = project => `
     alt="${project.title}">
 </figure>`;
 
+/**
+ * Builds the close button for the dialog.
+ * Its aria label switches with the active language.
+ */
+const closeButton = () => `
+<button class="project-dialog__close"
+  aria-label="${t().closeDialog}">×</button>`;

@@ -121,3 +121,14 @@ const nextProject = () => {
   openProject(nextIndex);
 };
 
+/**
+ * Hides the project dialog and unlocks the page behind it.
+ * The aria state is reset together with the visual state.
+ */
+const closeDialog = () => {
+  const dialog = qs('#project-dialog');
+
+  dialog.classList.remove(OPEN_CLASS);
+  dialog.setAttribute('aria-hidden', 'true');
+  bodyState('dialog-open', false);
+};
