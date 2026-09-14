@@ -111,3 +111,12 @@ const closeBackdrop = event => {
   const clickedBackdrop = event.target.id === 'project-dialog';
   if (clickedBackdrop) closeDialog();
 };
+
+/**
+ * Calculates the next project index and opens that project.
+ * Modulo wraps the last project back to the first one.
+ */
+const nextProject = () => {
+  const nextIndex = (state.projectIndex + 1) % projects.length;
+  openProject(nextIndex);
+};
