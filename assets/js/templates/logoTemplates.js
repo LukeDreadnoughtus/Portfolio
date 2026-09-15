@@ -1,4 +1,7 @@
-
+/**
+ * Builds the portfolio logo used in header and footer.
+ * The returned markup is independent from language switching.
+ */
 export const logoTemplate = () => `
 <a class="logo" href="#home" aria-label="Go to start">
   <div class="logo__initials fira">
