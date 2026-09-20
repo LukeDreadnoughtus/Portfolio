@@ -144,3 +144,66 @@ export const i18n = {
     back: 'Zurück'
   }
 };
+
+export const skills = [
+  ['html', 'HTML'],
+  ['css', 'CSS'],
+  ['javascript', 'JavaScript'],
+  ['typescript', 'TypeScript'],
+  ['angular', 'Angular'],
+  ['firebase', 'Firebase'],
+  ['git', 'Git'],
+  ['api', 'Rest-Api'],
+  ['growth-mindset', 'Growth mindset']
+];
+
+export const projects = [
+  {
+    title: 'Join',
+    image: 'join.png',
+    preview: 'join.png',
+    subtitle: {
+      en: 'Task manager inspired by the Kanban System',
+      de: 'Task-Manager inspiriert vom Kanban-System'
+    },
+    desc: {
+      en: 'Task manager with drag and drop logic, contacts and structured workflow views.',
+      de: 'Task-Manager mit Drag-and-drop-Logik, Kontakten und strukturierten Workflow-Ansichten.'
+    },
+    tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    github: '#',
+    live: 'http://join.dreadnoughtus.de/'
+  },
+  {
+    title: 'Sharki',
+    image: 'sharki.png',
+    preview: 'sharki.png',
+    subtitle: {
+      en: 'A simple object-oriented browser game',
+      de: 'Ein einfaches objektorientiertes Browser-Spiel'
+    },
+    desc: {
+      en: 'A small browser game with keyboard controls, animations and collision logic.',
+      de: 'Ein kleines Browser-Spiel mit Tastatursteuerung, Animationen und Kollisionslogik.'
+    },
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    github: '#',
+    live: 'http://sharki.dreadnoughtus.de/'
+  },
+  {
+    title: 'Pokedex',
+    image: 'pokedex.png',
+    preview: 'Pokedex.png',
+    subtitle: {
+      en: 'API based Pokémon library',
+      de: 'API-basierte Pokémon-Bibliothek'
+    },
+    desc: {
+      en: 'A Pokédex using API data, cards, detail views and responsive interaction.',
+      de: 'Ein Pokédex mit API-Daten, Karten, Detailansichten und responsiver Interaktion.'
+    },
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    github: '#',
+    live: 'http://pokedex.dreadnoughtus.de/'
+  }
+];
