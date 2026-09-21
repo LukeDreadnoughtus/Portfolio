@@ -19,6 +19,21 @@
     text-align: center;
 }
 
+.carousel__wrapper {
+    position: relative;
+}
+
+.carousel__wrapper > .quotes {
+    position: absolute;
+    top: 0;
+    height: 274px;
+    width: 632px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100;
+    pointer-events: none;
+}
+
 @media (max-width: 768px) {
     .references-section {
         padding-block: 6.25rem;
