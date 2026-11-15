@@ -1,20 +1,33 @@
+
 import {
   qs,
   setHtml
 } from './utils/dom.js';
+
 import {
   headerTemplate,
   appTemplate
 } from './templates/layoutTemplates.js';
+
 import {
   initNavigation
 } from './features/navigation.js';
+
+import {
+  initProjects
+} from './features/projects.js';
+
 import {
   routeHash
 } from './features/legal.js';
+
 import {
   initCursor
 } from './features/cursor.js';
+
+import {
+  initContact
+} from './features/contact.js';
 
 export const render = () => {
   setHtml(
@@ -31,5 +44,7 @@ export const render = () => {
 
 export const initAll = () => {
   initNavigation();
+  initProjects();
   initCursor();
+  initContact();
 };

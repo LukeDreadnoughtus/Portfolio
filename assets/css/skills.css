@@ -108,6 +108,7 @@
     display: block;
 }
 
+
 @media (max-width: 1000px) {
     .skills-section__grid {
         display: block;
@@ -129,6 +130,4 @@
     }
 }
 
-.skills-icons {
-  grid-template-columns: repeat(2, 1fr);
-}
+

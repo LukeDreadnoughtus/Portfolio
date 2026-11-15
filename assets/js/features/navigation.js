@@ -49,7 +49,10 @@ const bindLanguage = () => {
  * Rendering also reconnects navigation events afterwards.
  */
 const changeLanguage = language => {
+  if (language !== 'de' && language !== 'en') return;
+
   state.lang = language;
+  localStorage.setItem('portfolio-language', language);
   render();
 };
 

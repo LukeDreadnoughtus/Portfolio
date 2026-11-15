@@ -76,7 +76,7 @@ const page = (title, text) => `
 <section class="legal-page">
   <div class="container">
     <h1 class="legal-page__title fira">${title}</h1>
-    <p class="legal-page__copy karla">${text}</p> 
+    <div class="legal-page__copy karla">${text}</div>
     <p>
       <a class="portfolio-btn karla" href="#home">${t().back}</a>
     </p>
