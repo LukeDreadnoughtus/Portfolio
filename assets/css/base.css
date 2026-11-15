@@ -183,6 +183,23 @@ h4 {
     gap: 0;
 }
 
+/* Button: Text außerhalb abschneiden */
+.hero-section__actions .scroll-btn {
+  overflow: hidden;
+}
+
+/* Ausgangsposition des Textes */
+.hero-section__actions .scroll-btn .btn-text {
+  display: inline-block;
+  transition: transform 900ms ease-out;
+}
+
+/* Text beim Hover vollständig nach links bewegen */
+.hero-section__actions .scroll-btn:hover .btn-text {
+  animation: none;
+  transform: translateX(calc(-100% - 40px));
+}
+
 .btn-text {
     white-space: nowrap;
 }
