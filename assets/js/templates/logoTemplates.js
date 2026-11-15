@@ -3,7 +3,7 @@
  * The returned markup is independent from language switching.
  */
 export const logoTemplate = () => `
-<a class="logo" href="#home" aria-label="Go to start">
+<a class="logo" href="/" aria-label="Go to start">
   <div class="logo__initials fira">
     <div class="logo__initials-letter
       logo__initials-letter-rotate">L</div>
