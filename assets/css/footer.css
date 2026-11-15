@@ -87,7 +87,8 @@
 .legal-page__copy {
     line-height: 1.65;
     color: #fff;
-    max-width: 80ch;
+    width: 100%;
+    max-width: none;
     margin-bottom: 1rem;
 }
 

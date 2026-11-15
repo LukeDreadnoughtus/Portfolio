@@ -536,10 +536,10 @@ export const skills = [
   ['typescript', 'TypeScript'],
   ['angular', 'Angular'],
   ['firebase', 'Firebase'],
-  ['database-02-svgrepo-com', 'MSSQL'],
+  ['database-02-svgrepo-com', 'MS SQL Server'],
   ['git', 'Git'],
-  ['api', 'Rest-Api'],
-  ['growth-mindset', 'Growth mindset']
+  ['api', 'REST-API'],
+  ['growth-mindset', 'Growth Mindset']
 ];
 
 export const projects = [

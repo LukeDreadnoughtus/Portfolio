@@ -1,6 +1,7 @@
 import { qs, setHtml } from '../utils/dom.js';
 import { state, i18n } from '../data/content.js';
 import { appTemplate } from '../templates/layoutTemplates.js';
+import { footerTemplate } from '../templates/sectionTemplates.js';
 
 let afterRestore = () => {};
 const t = () => i18n[state.lang];
@@ -76,9 +77,17 @@ const page = (title, text) => `
 <section class="legal-page">
   <div class="container">
     <h1 class="legal-page__title fira">${title}</h1>
-    <div class="legal-page__copy karla">${text}</div>
+
+    <div class="legal-page__copy karla">
+      ${text}
+    </div>
+
     <p>
-      <a class="portfolio-btn karla" href="#home">${t().back}</a>
+      <a class="portfolio-btn karla" href="#home">
+        ${t().back}
+      </a>
     </p>
   </div>
-</section>`;
+</section>
+
+${footerTemplate()}`;
