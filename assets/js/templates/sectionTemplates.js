@@ -267,12 +267,22 @@ const autoComplete = name => {
  * Contact.js checks this field during form validation.
  */
 const privacyTemplate = () => `
-<label class="privacy-field">
-  <input class="privacy-field__checkbox" type="checkbox"
-    name="privacy">
-  <span class="privacy-field__box"></span>
-  <span class="karla">${t().privacy}</span>
-</label>`;
+<div class="privacy-field">
+  <input
+    class="privacy-field__checkbox"
+    type="checkbox"
+    id="privacy-consent"
+    name="privacy"
+  >
+
+  <label class="privacy-field__box" for="privacy-consent"></label>
+
+  <span class="karla">
+    ${state.lang === 'de'
+      ? 'Ich habe die <a class="privacy-field__link" href="#privacy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.'
+      : 'I have read the <a class="privacy-field__link" href="#privacy">Privacy Policy</a> and agree to the processing of my data.'}
+  </span>
+</div>`;
 
 /**
  * Builds the footer.

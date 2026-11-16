@@ -103,6 +103,16 @@
     color: #fff;
 }
 
+.privacy-field__link {
+    color: #3dcfb6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.privacy-field__link:hover {
+    text-decoration: underline;
+}
+
 .privacy-field__checkbox {
     cursor: pointer;
     opacity: 0;

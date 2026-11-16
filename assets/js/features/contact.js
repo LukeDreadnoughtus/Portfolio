@@ -46,8 +46,20 @@ const bindFormEvents = form => {
  * Adds live validation to one text field.
  */
 const bindTextField = field => {
-  field.addEventListener('input', () => validateField(field, true));
-  field.addEventListener('blur', () => validateField(field, true));
+  field.addEventListener('blur', () => {
+    validateField(field, true);
+  });
+
+  field.addEventListener('input', () => {
+    const wrapper = field.closest('.form-field');
+
+    if (
+      wrapper.classList.contains('is-invalid') ||
+      wrapper.classList.contains('is-valid')
+    ) {
+      validateField(field, true);
+    }
+  });
 };
 
 /**
@@ -208,7 +220,17 @@ const getEmailError = value => {
   if (!email) return t().emailRequired;
   if (!email.includes('@')) return t().emailMissingAt;
 
-  return getEmailDomainError(email);
+  const domainError = getEmailDomainError(email);
+
+  if (domainError) return domainError;
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  if (!emailPattern.test(email)) {
+    return t().emailInvalid;
+  }
+
+  return '';
 };
 
 /**
