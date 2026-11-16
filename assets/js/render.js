@@ -4,6 +4,10 @@ import {
   setHtml
 } from './utils/dom.js';
 
+import { 
+  initCarousel 
+} from './features/carousel.js';
+
 import {
   headerTemplate,
   appTemplate
@@ -47,4 +51,5 @@ export const initAll = () => {
   initProjects();
   initCursor();
   initContact();
+  initCarousel();
 };
