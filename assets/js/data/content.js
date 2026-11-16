@@ -556,7 +556,7 @@ export const projects = [
       de: 'Task-Manager mit Drag-and-drop-Logik, Kontakten und strukturierten Workflow-Ansichten.'
     },
     tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-    github: '#',
+    github: 'https://github.com/LukeDreadnoughtus/Join',
     live: 'http://join.dreadnoughtus.de/'
   },
   {
@@ -572,7 +572,7 @@ export const projects = [
       de: 'Ein kleines Browser-Spiel mit Tastatursteuerung, Animationen und Kollisionslogik.'
     },
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: '#',
+    github: 'https://github.com/LukeDreadnoughtus/Sharky_slap-and-swim',
     live: 'http://sharki.dreadnoughtus.de/'
   },
   {
@@ -588,7 +588,7 @@ export const projects = [
       de: 'Ein Pokédex mit API-Daten, Karten, Detailansichten und responsiver Interaktion.'
     },
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: '#',
+    github: 'https://github.com/LukeDreadnoughtus/Pokedex',
     live: 'http://pokedex.dreadnoughtus.de/'
   }
 ];
