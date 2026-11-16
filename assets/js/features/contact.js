@@ -117,16 +117,16 @@ const submitForm = async event => {
  * Runs every validator and returns the combined result.
  */
 const validateForm = form => {
-  const fieldsValid = fieldNames.every(name => {
-    return validateField(form.elements.namedItem(name), true);
-  });
+  const results = fieldNames.map(name =>
+    validateField(form.elements.namedItem(name), true)
+  );
 
   const privacyValid = validatePrivacy(
     form.elements.namedItem('privacy'),
     true
   );
 
-  return fieldsValid && privacyValid;
+  return results.every(Boolean) && privacyValid;
 };
 
 /**
