@@ -110,10 +110,34 @@ const futureClass = icon => icon === 'growth-mindset'
   ? 'skills-icons__item--future'
   : '';
 
+
 const futureBubble = icon => icon === 'growth-mindset'
-  ? `<img class="skills-icons__bubble"
-      src="assets/img/technologies/learning-interest.svg"
-      alt="Future skills">`
+  ? `
+    <div class="skills-icons__bubble">
+      <p class="skills-icons__bubble-text karla">
+        I have a special interest in learning
+      </p>
+
+      <div class="skills-icons__bubble-skills">
+        <div class="skills-icons__bubble-skill">
+          <img
+            class="skills-icons__bubble-logo"
+            src="assets/img/technologies/React.svg"
+            alt=""
+          >
+          <span>React</span>
+        </div>
+
+        <div class="skills-icons__bubble-skill">
+          <img
+            class="skills-icons__bubble-logo"
+            src="assets/img/technologies/Vue Js.svg"
+            alt=""
+          >
+          <span>Vue.js</span>
+        </div>
+      </div>
+    </div>`
   : '';
 
 /**
